@@ -1,0 +1,5 @@
+en:
+  github:
+    install_mailer:
+      shutdown:
+        subject: "Typo CI's GitHub Integration will be shutdown on the 13th of September"

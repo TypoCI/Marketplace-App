@@ -1,0 +1,5 @@
+.highlight {
+  > pre {
+    padding: map-get($spacers, 1) map-get($spacers, 2);
+  }
+}

@@ -1,0 +1,9 @@
+---
+Daily Usage Summary:
+  :cron: 0 6 * * MON
+  :class: Slack::UsageSummaryJob
+  :queue: slack__usage_summary
+Incineration old Github::CheckSuites:
+  :cron: 0 12 * * *
+  :class: Github::CheckSuites::IncinerationJob
+  :queue: github__check_suites__incineration

@@ -1,0 +1,17 @@
+<% if @installs.any? %>
+  <div class="mb-5 mx-auto install__list">
+    <%= render @installs %>
+  </div>
+
+  <div class="text-center">
+    <%= link_to 'Add another?', new_github_installation_url, class: 'btn btn-outline-primary' %>
+  </div>
+<% else %>
+  <div class="w-50 mx-auto mb-5">
+    <p>You don't appear to have Typo CI installed on any of your GitHub accounts.</p>
+  </div>
+
+  <div class="text-center">
+    <%= link_to 'Add on GitHub?', new_github_installation_url, class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>

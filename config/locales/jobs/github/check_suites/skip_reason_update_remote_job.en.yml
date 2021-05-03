@@ -1,0 +1,29 @@
+en:
+  jobs:
+    github/check_suites/skip_reason_update_remote_job:
+      check_run_name:
+        production: 'TypoCheck'
+        development: 'TypoCheck (Development)'
+        test: 'TypoCheck (Test)'
+
+      output_title: "Current plan doesn't support private repositories"
+      output_summary: |
+        <p align="center">
+          <a href="https://typoci.com/"><img src="https://typoci.com/images/typo-ci-logo.svg" alt="Typo CI Logo - It's a sword surrounded by brackets" width="96"></a>
+        </p>
+        <h1 align="center">
+          Typo CI
+        </h1>
+        <br />
+        <div align="center">
+          👉 <strong><a href="%{github_change_plan_url}">Upgrade To Enable Private Repositories</a></strong> 👈
+        </div>
+        <br />
+
+        Your current plan does not support commits to Private Repositories. Please upgrade via the GitHub Marketplace to enable support for Private Repositories.
+
+        The key benefits of upgrading are:
+
+        ✅ Unlimited Private Repositories
+        ✅ Unlimited Public Repositories
+        ✅ Unlimited Spell Checks

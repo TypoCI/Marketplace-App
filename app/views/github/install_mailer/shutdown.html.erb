@@ -1,0 +1,11 @@
+<p>Dear <%= @install.account_login %>,</p>
+
+<p>You are receiving this email because my records show <%= @install.account_type == "User" ? 'you' : 'your organization' %> installed the <a href="https://github.com/marketplace/<%= ENV['GITHUB_MARKETPLACE_SLUG'] %>" target="_blank">Typo CI GitHub Integration</a> on <%= l @install.created_at.to_date, format: :long %>.</p>
+
+<p>I regret to inform you that the Typo CI GitHub Integration will be shutdown on <strong>September 13th, 2020</strong>. This is because it has been superseded by the <a href="https://github.com/marketplace/actions/typo-ci-spellcheck-action" target="_blank">Typo CI GitHub Action</a>, which has proven to be a better all round solution.</p>
+
+<p>I'd like to thank you for using Typo CI & I hope your find the new <a href="https://github.com/marketplace/actions/typo-ci-spellcheck-action" target="_blank">GitHub Action</a> version of it just as useful. If you have any questions please reply to this email or send me a message <a href="https://twitter.com/MikeRogers0" target="_blank">on twitter</a>.</p>
+
+<p>Thanks, <br />
+  Mike Rogers<br />
+  <em>Typo CI Founder</em></p>

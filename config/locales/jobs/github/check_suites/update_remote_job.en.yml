@@ -1,0 +1,37 @@
+en:
+  jobs:
+    github/check_suites/update_remote_job:
+      check_run_name:
+        production: 'TypoCheck'
+        development: 'TypoCheck (Development)'
+        test: 'TypoCheck (Test)'
+      actions:
+        reported:
+          label: 'Report Analysis'
+          description: "Something Wrong? I'll investigate :)"
+
+      output_title:
+        zero: 'No typos found'
+        one: 'Found a typo'
+        other: 'Found a few typos'
+        invalid_custom_configuration: '.typo-ci.yml file is invalid'
+      output_summary_header: |
+        <p align="center">
+          <a href="https://typoci.com/"><img src="https://typoci.com/images/typo-ci-logo.svg" alt="Typo CI Logo - It's a sword surrounded by brackets" width="96"></a>
+        </p>
+        <h1 align="center">
+          Typo CI
+        </h1>
+      output_summary_body:
+        zero: 'Perfect! No typos found in **%{output_files_count}**'
+        one: '**%{count} typo** found in **%{output_files_count}**'
+        other: '**%{count} typos** found in **%{output_files_count}**'
+      output_summary_actions:
+          invalid_custom_configuration: |
+            **Action Required:** We were unable to parse your `.typo-ci.yml` file. Please review [the Typo CI documentation](%{documentation_url}), run it through a [YAML Validator](https://yamlvalidator.com/) and then try again.
+          feedback: |
+            Have a suggestion or feedback for Typo CI? [Please get in touch](%{contact_url}). If you're finding Typo CI useful, please consider [Buying me a Coffee](https://www.buymeacoffee.com/MikeRogers0), it'll help continue the development of this app!
+      output_files_count:
+        zero: 'No files'
+        one: '1 file'
+        other: '%{count} files'

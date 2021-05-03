@@ -1,0 +1,15 @@
+h1, .h1 {
+  text-align: center;
+  word-break: break-word;
+
+  &::after {
+    display: inline;
+    content: 'I';
+    font-weight: 400;
+    color: $primary;
+    font-size: 1.5em;
+    vertical-align: sub;
+    font-family: $font-family-sans-serif;
+    padding-left: 5px;
+  }
+}

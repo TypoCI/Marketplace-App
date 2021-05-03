@@ -1,0 +1,81 @@
+{
+  "action": "removed",
+  "installation": {
+    "id": 875537,
+    "account": {
+      "login": "MikeRogers0",
+      "id": 320000,
+      "node_id": "MDQ6VXNlcjMyNTM4NA==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/320000?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/MikeRogers0",
+      "html_url": "https://github.com/MikeRogers0",
+      "followers_url": "https://api.github.com/users/MikeRogers0/followers",
+      "following_url": "https://api.github.com/users/MikeRogers0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/MikeRogers0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/MikeRogers0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/MikeRogers0/subscriptions",
+      "organizations_url": "https://api.github.com/users/MikeRogers0/orgs",
+      "repos_url": "https://api.github.com/users/MikeRogers0/repos",
+      "events_url": "https://api.github.com/users/MikeRogers0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/MikeRogers0/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "repository_selection": "selected",
+    "access_tokens_url": "https://api.github.com/app/installations/875537/access_tokens",
+    "repositories_url": "https://api.github.com/installation/repositories",
+    "html_url": "https://github.com/settings/installations/875537",
+    "app_id": 22929,
+    "target_id": 320000,
+    "target_type": "User",
+    "permissions": {
+      "checks": "write",
+      "statuses": "write",
+      "contents": "read",
+      "metadata": "read",
+      "repository_projects": "read"
+    },
+    "events": [
+      "check_run",
+      "check_suite",
+      "status"
+    ],
+    "created_at": "2019-04-28T15:20:56.000+01:00",
+    "updated_at": "2019-04-28T15:20:56.000+01:00",
+    "single_file_name": null
+  },
+  "repository_selection": "selected",
+  "repositories_added": [
+
+  ],
+  "repositories_removed": [
+    {
+      "id": 146505263,
+      "node_id": "MDEwOlJlcG9zaXRvcnkxNDY1MDUyNjM=",
+      "name": "OtherSampleApp",
+      "full_name": "MikeRogers0/OtherSampleApp",
+      "private": true
+    }
+  ],
+  "sender": {
+    "login": "MikeRogers0",
+    "id": 320000,
+    "node_id": "MDQ6VXNlcjMyNTM4NA==",
+    "avatar_url": "https://avatars2.githubusercontent.com/u/320000?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/MikeRogers0",
+    "html_url": "https://github.com/MikeRogers0",
+    "followers_url": "https://api.github.com/users/MikeRogers0/followers",
+    "following_url": "https://api.github.com/users/MikeRogers0/following{/other_user}",
+    "gists_url": "https://api.github.com/users/MikeRogers0/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/MikeRogers0/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/MikeRogers0/subscriptions",
+    "organizations_url": "https://api.github.com/users/MikeRogers0/orgs",
+    "repos_url": "https://api.github.com/users/MikeRogers0/repos",
+    "events_url": "https://api.github.com/users/MikeRogers0/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/MikeRogers0/received_events",
+    "type": "User",
+    "site_admin": false
+  }
+}

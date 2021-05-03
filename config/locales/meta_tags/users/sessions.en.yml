@@ -1,0 +1,7 @@
+en:
+  meta_tags:
+    users:
+      sessions:
+        new:
+          title: 'Login'
+          description: 'Check your code for common spelling mistakes and correct them before you merge them'

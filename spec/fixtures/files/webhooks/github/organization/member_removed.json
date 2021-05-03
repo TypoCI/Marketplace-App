@@ -1,0 +1,67 @@
+{
+  "action": "member_removed",
+  "membership": {
+    "url": "https://api.github.com/orgs/SampleApp/memberships/MikeRogers0",
+    "state": "active",
+    "role": "member",
+    "organization_url": "https://api.github.com/orgs/SampleApp",
+    "user": {
+      "login": "MikeRogers0",
+      "id": 320000,
+      "node_id": "MDQ6VXNlcjMyNTM4NA==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/320000?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/MikeRogers0",
+      "html_url": "https://github.com/MikeRogers0",
+      "followers_url": "https://api.github.com/users/MikeRogers0/followers",
+      "following_url": "https://api.github.com/users/MikeRogers0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/MikeRogers0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/MikeRogers0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/MikeRogers0/subscriptions",
+      "organizations_url": "https://api.github.com/users/MikeRogers0/orgs",
+      "repos_url": "https://api.github.com/users/MikeRogers0/repos",
+      "events_url": "https://api.github.com/users/MikeRogers0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/MikeRogers0/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  "organization": {
+    "login": "SampleApp",
+    "id": 15300000,
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjE1MzY1NTA3",
+    "url": "https://api.github.com/orgs/SampleApp",
+    "repos_url": "https://api.github.com/orgs/SampleApp/repos",
+    "events_url": "https://api.github.com/orgs/SampleApp/events",
+    "hooks_url": "https://api.github.com/orgs/SampleApp/hooks",
+    "issues_url": "https://api.github.com/orgs/SampleApp/issues",
+    "members_url": "https://api.github.com/orgs/SampleApp/members{/member}",
+    "public_members_url": "https://api.github.com/orgs/SampleApp/public_members{/member}",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/15300000?v=4",
+    "description": "Area is the easiest way to modernise your estate agency! "
+  },
+  "sender": {
+    "login": "shawnzvinis",
+    "id": 5586373,
+    "node_id": "MDQ6VXNlcjU1ODYzNzM=",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/5586373?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/shawnzvinis",
+    "html_url": "https://github.com/shawnzvinis",
+    "followers_url": "https://api.github.com/users/shawnzvinis/followers",
+    "following_url": "https://api.github.com/users/shawnzvinis/following{/other_user}",
+    "gists_url": "https://api.github.com/users/shawnzvinis/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/shawnzvinis/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/shawnzvinis/subscriptions",
+    "organizations_url": "https://api.github.com/users/shawnzvinis/orgs",
+    "repos_url": "https://api.github.com/users/shawnzvinis/repos",
+    "events_url": "https://api.github.com/users/shawnzvinis/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/shawnzvinis/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "installation": {
+    "id": 1630066,
+    "node_id": "MDIzOkludGVncmF0aW9uSW5zdGFsbGF0aW9uMTYzMDA2Ng=="
+  }
+}

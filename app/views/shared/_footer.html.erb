@@ -1,0 +1,16 @@
+<div class="footer mt-4" id="footer">
+  <footer class="container footer__grid">
+    <% if current_user %>
+      <div class="footer__nav">
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+      </div>
+    <% end %>
+
+    <div class="footer__credits">
+      <p>
+        Typo CI was created by <%= link_to 'Mike Rogers', 'https://mikerogers.io/', target: '_blank', rel: 'noopener' %>
+        <br />&copy; <%= link_to 'Typo CI', 'https://typoci.com/' %> <%= Time.zone.today.year %>
+      </p>
+    </div>
+  </footer>
+</div>

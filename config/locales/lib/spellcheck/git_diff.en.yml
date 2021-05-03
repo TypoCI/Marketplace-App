@@ -1,0 +1,30 @@
+en:
+  lib:
+    spellcheck/git_diff:
+      message: '"%{word}" is a typo. Did you mean "%{suggestion}"?'
+      excluded_words:
+        samesies: "I don't know this word. \"%{word}\"? From context, I believe it means \"Proudly Uneducated\"."
+        recieve: "\"%{word}\" is a typo. Did you mean \"%{suggestion}\"? I remember this with the rhyme \"I before E, except after C unless it's one of 923 words spelled cie\"."
+        definate: '"%{word}" is a typo. Did you mean "%{suggestion}"? Definite is one of the most misspelt words in the English language.'
+        developper: '"%{word}" is a typo. Did you mean "%{suggestion}"? Fun fact: The German for "Developer" is "Entwickler".'
+        execpt: "\"%{word}\" is a typo. Did you mean \"%{suggestion}\"? I'm actually tested using RSpec, neat right?"
+        fundametal: "\"%{word}\" is a typo. Did you mean \"%{suggestion}\"? Misspellings of this word increase when you're listing to Metallica."
+        rhythem: '"%{word}" is a typo. Did you mean "%{suggestion}"? Rhythm Helps Your Two Hips Move.'
+        seperate: '"%{word}" is a typo. Did you mean "%{suggestion}"? Along with loose and definitely, separate is one of the most commonly misspelled words in the English language.'
+        supprise: 'Surprise! I found the typo "%{word}". Did you mean "%{suggestion}"?'
+        occure: '"%{word}" is a typo. Did you mean "%{suggestion}"? The word "occure" does not technically exist in the English lexicon.'
+        kadwill: '"%{word}" is a typo. Did you mean "%{suggestion}"? Did you know you can add custom words via the .typo-ci.yml file?'
+        beynon: '"%{word}" is a typo. Did you mean "%{suggestion}"? Did you know you can add custom words via the .typo-ci.yml file?'
+        zvinis: "\"%{word}\" sounds like a surname of a top notch guy :)"
+        lidiawisniewska: "\"%{word}\" I think you mean \"Best Developer I ever worked with\"."
+        eazynow: "\"%{word}\" calm down, you might mean \"Why did we eat that sausage\"."
+        tomkadwill: "\"%{word}\" is a typo. Poor guy, you should ask him if he wants a \"Reese's Pieces\"."
+        mikerogers0: "\"%{word}\" isn't a typo. @MikeRogers0 created Typo CI. I just wanted to tell you that."
+        tombeynon: "\"%{word}\" is a typo. Sounds like the name of a chap who uses tabs in his Ruby code."
+        nicklinnell: "\"%{word}\" is a typo. Did you mean \"Developer who spills water on his keyboard very frequently\"?"
+        robinwhittleton: "\"%{word}\" is a typo. Did you mean \"Webbutvecklare\"?"
+        johnbeynon: "\"%{word}\" is a typo. Did you mean \"Mr Heroku\"?"
+        maniacalrobot: "\"%{word}\" is a typo. Did you mean \"VIM Enthusiast\"?"
+        tomajwinter: "\"%{word}\" is a typo. Did you mean \"Amazing Ruby Developer\"?"
+        davemackintosh: "\"%{word}\" is a typo. Did you mean \"Amazing JavaScript Developer\"?"
+        zaccolley: "\"%{word}\" is a typo. Did you mean \"Amazing Developer\"?"

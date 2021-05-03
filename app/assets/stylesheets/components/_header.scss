@@ -1,0 +1,61 @@
+.header {
+  padding: map-get($spacers, 0);
+
+  display: grid;
+  grid-column-gap: map-get($spacers, 1);
+  grid-template-columns: repeat(12, 1fr);
+
+  @include media-breakpoint-up(sm) {
+    padding: map-get($spacers, 4) 15px;
+  }
+}
+
+.header__logo {
+  grid-column: span 6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: map-get($spacers, 2) map-get($spacers, 1);
+
+  @include media-breakpoint-up(sm) {
+    grid-column: span 6;
+    justify-content: left;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-column: 4 / span 6;
+    justify-content: center;
+  }
+}
+
+.header__action {
+  grid-column: span 6;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include media-breakpoint-up(sm) {
+    grid-column: span 6;
+  }
+
+  @include media-breakpoint-up(lg) {
+    grid-column: span 3;
+  }
+}
+
+.header__action > .btn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+
+  &::after {
+    margin-top: 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+    height: auto;
+  }
+}

@@ -1,0 +1,22 @@
+.btn {
+  text-transform: uppercase;
+}
+
+.btn-primary {
+}
+
+.btn-primary > div {
+  align-self: center;
+}
+
+.btn-primary::after {
+  content: ' ';
+  float: right;
+  margin-top: 3px;
+  background: image-url('sword.svg') no-repeat;
+  background-size: contain;
+  width: 28px;
+  height: 13px;
+  margin-left: map-get($spacers, 2);
+  align-self: center;
+}

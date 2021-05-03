@@ -1,0 +1,50 @@
+---
+# This is used to run the test suite within CI without requiring extra services.
+#
+## Usage:
+#
+# docker-compose -f docker-compose.ci.yml build test
+# docker-compose -f docker-compose.ci.yml run --rm test
+#
+# Docker Compose 2.4 is for local development
+# https://www.heroku.com/podcasts/codeish/57-discussing-docker-containers-and-kubernetes-with-a-docker-captain - Source on that.
+version: '2.4'
+
+x-ci-app: &ci-app
+  image: rails-app:0.3.0
+  mem_limit: 512m
+  build:
+    context: .
+    dockerfile: Dockerfile
+    target: development
+  environment:
+    DATABASE_URL: postgres://postgres:postgres@postgres:5432/
+    RAILS_ENV: test
+    RACK_ENV: test
+    BUNDLE_PATH: /usr/src/app/vendor/bundle
+  volumes:
+    - .:/usr/src/app:cached
+
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:12.3-alpine
+    mem_limit: 64m
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: none
+
+  test:
+    <<: *ci-app
+    command: bash -c "bin/setup && bundle exec rake assets:precompile && bundle exec rspec"

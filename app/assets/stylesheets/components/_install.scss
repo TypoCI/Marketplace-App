@@ -1,0 +1,61 @@
+.install__list {
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    width: 80%;
+  }
+}
+
+.install {
+  background: $white;
+  padding: map-get($spacers, 3);
+  border: 1px solid $border-color;
+
+  display: grid;
+  grid-column-gap: map-get($spacers, 1);
+  grid-template-columns: repeat(9, 1fr);
+
+  margin-bottom: map-get($spacers, 3);
+}
+
+.install__avatar {
+  grid-column: 1 / 10;
+  display: flex;
+
+  img {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-column: span 1;
+  }
+}
+
+.install__name {
+  display: flex;
+  grid-column: 1 / 10;
+  justify-content: center;
+  align-items: center;
+
+  @include media-breakpoint-up(md) {
+    justify-content: left;
+    grid-column: span 3;
+  }
+}
+.install__actions {
+  display: flex;
+  grid-column: 1 / 10;
+  justify-content: center;
+  margin-top: map-get($spacers, 3);
+
+  a {
+    margin-left: map-get($spacers, 3);
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-top: map-get($spacers, 0);
+    grid-column: span 5;
+    justify-content: right;
+  }
+}

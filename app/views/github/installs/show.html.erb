@@ -1,0 +1,13 @@
+<div class="w-50 mx-auto">
+  <%= render @install %>
+
+  <div class="text-center">
+    <%= link_to 'Manage Access on GitHub', "https://github.com/settings/installations/#{@install.install_id}", class: 'btn btn-outline-primary', target: '_blank' %>
+  </div>
+
+  <hr />
+</div>
+
+<div class="w-50 mt-4 mx-auto">
+  <%= render @repositories %>
+</div>

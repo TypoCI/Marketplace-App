@@ -1,0 +1,4 @@
+en:
+  lib:
+    spellcheck/file_content:
+      message: '"%{word}" is a typo. Did you mean "%{suggestion}"?'

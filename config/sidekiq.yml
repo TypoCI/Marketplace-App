@@ -1,0 +1,41 @@
+# Sample configuration file for Sidekiq.
+# Options here can still be overridden by cmd line args.
+# Place this file at config/sidekiq.yml and Sidekiq will
+# pick it up automatically.
+---
+:verbose: false
+:concurrency: 7
+:max_retries: 3
+
+# Set timeout to 8 on Heroku, longer if you manage your own systems.
+:timeout: 8
+
+# Sidekiq will run this file through ERB when reading it so you can
+# even put in dynamic logic, like a host-specific queue.
+# http://www.mikeperham.com/2013/11/13/advanced-sidekiq-host-specific-queues/
+:queues:
+  - critical
+  - github__installation__update_marketplace_purchase
+  - github__check_suites__skip_reason_update_remote
+  - github__check_suites__update_remote
+  - github__check_suites__requested
+  - github__installation__update_details
+  - github__installation__analyse_all_pull_requests
+  - github__installation__update_repositories_count
+  - github__repository__analyse_pull_requests
+  - heroku__run_command
+  - github__check_suites__analysis--pull_request
+  - github__check_suites__analysis
+  - github__check_suites__analysis--default_branch
+  - mailers
+  - slack__usage_summary
+  - default
+  - github__installation__update_install_email_address
+  - github__installation__sync_all_marketplace_plans
+  - github__installation__incineration
+  - action_mailbox_routing
+  - action_mailbox_incineration
+  - active_storage_analysis
+  - active_storage_purge
+  - github__check_suites__incineration
+  - low

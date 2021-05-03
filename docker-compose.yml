@@ -1,0 +1,114 @@
+---
+# This is a set up for Rails 6, running a worker & webpack.
+# Gems are cached within a volume, which speeds up development when adding new gems.
+#
+## Usage:
+#
+# docker-compose build
+# docker-compose run --rm web bin/setup
+# docker-compose up
+#
+# Docker Compose 2.4 is for local development
+# https://www.heroku.com/podcasts/codeish/57-discussing-docker-containers-and-kubernetes-with-a-docker-captain - Source on that.
+version: '2.4'
+
+x-app: &app
+  image: typo-ci:0.4.0
+  mem_limit: 512m
+  build:
+    context: .
+    dockerfile: Dockerfile
+    target: development
+  tmpfs:
+    - /tmp
+  environment:
+    REDIS_URL: redis://@redis:6379/1
+    DATABASE_URL: postgres://postgres:postgres@postgres:5432/
+    WEBPACKER_DEV_SERVER_HOST: webpacker
+  volumes:
+    - .:/usr/src/app:cached
+    - bundler:/usr/local/bundle:delegated
+    - bootsnap_cache:/usr/src/bootsnap:delegated
+    - rails_cache:/usr/src/app/tmp/cache:delegated
+    - packs:/usr/src/app/public/packs:delegated
+    - node_modules:/usr/src/app/node_modules:delegated
+    - yarn_cache:/usr/src/yarn:delegated
+    - letter_opener:/usr/src/app/tmp/letter_opener:delegated
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_started
+
+services:
+  postgres:
+    image: postgres:12.3-alpine
+    mem_limit: 64m
+    volumes:
+      - postgresql:/var/lib/postgresql/data:delegated
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      PSQL_HISTFILE: /root/log/.psql_history
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 2s
+      retries: 10
+    logging:
+      driver: none
+
+  redis:
+    image: redis:4.0.14-alpine
+    mem_limit: 64m
+    volumes:
+      - redis:/data:delegated
+    ports:
+      - "127.0.0.1:6379:6379"
+    restart: on-failure
+    logging:
+      driver: none
+
+  web:
+    <<: *app
+    command: bash -c "rm -rf /usr/src/app/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    ports:
+      - "127.0.0.1:3000:3000"
+
+  ngrok:
+    image: wernight/ngrok
+    env_file:
+      - .env
+    environment:
+      NGROK_AUTH: "${NGROK_AUTH}"
+      NGROK_REGION: eu
+      NGROK_SUBDOMAIN: typoci
+      NGROK_HEADER: webhooks.typoci.test
+      NGROK_PORT: "web:3000"
+
+  worker:
+    <<: *app
+    command: bundle exec sidekiq -C config/sidekiq.yml
+
+  webpacker:
+    <<: *app
+    mem_limit: 256m
+    command: ./bin/webpack-dev-server
+    environment:
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+    ports:
+      - "127.0.0.1:3035:3035"
+
+volumes:
+  postgresql:
+  redis:
+  bundler:
+  bootsnap_cache:
+  rails_cache:
+  packs:
+  node_modules:
+  yarn_cache:
+  letter_opener:

@@ -1,0 +1,71 @@
+.how_it_works {
+  position: relative;
+}
+
+.how_it_works__steps {
+  text-align: left;
+  margin-bottom: (map-get($spacers, 5) + 8rem);
+
+  @include media-breakpoint-up(md) {
+    width: 50%;
+    margin: map-get($spacers, 0) auto;
+  }
+}
+
+.how_it_works__step {
+  padding: map-get($spacers, 2) map-get($spacers, 0);
+
+  @include media-breakpoint-up(md) {
+    padding: map-get($spacers, 3) map-get($spacers, 0);
+  }
+}
+
+.how_it_works::before {
+  position: absolute;
+  background: image-url('quill.svg') no-repeat;
+  background-size: contain;
+  content: '';
+  width: calc(313px / 2.5);
+  height: calc(545px / 2.5);
+  bottom: 0;
+  left: calc(50% - 150px);
+
+  @include media-breakpoint-up(md) {
+    width: calc(313px / 1.5);
+    height: calc(545px / 1.5);
+    bottom: 0;
+    left: -25px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 313px;
+    height: 545px;
+    bottom: 0;
+    left: -75px;
+  }
+}
+
+.how_it_works::after {
+  position: absolute;
+  background: image-url('ink-pot.svg') no-repeat;
+  background-size: contain;
+  content: '';
+  width: calc(314px / 2.5);
+  height: calc(177px / 2.5);
+  bottom: 60px;
+  right: calc(50% - 100px);
+
+  @include media-breakpoint-up(md) {
+    width: calc(314px / 1.5);
+    height: calc(177px / 1.5);
+    bottom: 50px;
+    right: -25px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 314px;
+    height: 177px;
+    bottom: 50px;
+    right: -50px;
+  }
+}

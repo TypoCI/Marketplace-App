@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% if ENV['SENTRY_DSN'].present? %>
+      <meta name="x-sentry-dsn" content="<%= ENV['SENTRY_DSN'] %>">
+      <meta name="x-sentry-release" content="<%= Raven.configuration.release %>">
+      <meta name="x-sentry-environment" content="<%= Raven.configuration.current_environment %>">
+      <meta name="x-sentry-user-id" content="<%= Raven.context.user.dig(:id) %>">
+    <% end %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i|Montserrat:400,700&display=swap" rel="stylesheet" media="all" data-turbolinks-track="reload">
+
+    <link rel="apple-touch-icon" href="<%= image_path("apple-icon.png") %>" data-turbolinks-track="reload" />
+    <link rel="shortcut icon" href="<%= image_path("favicon.png") %>" data-turbolinks-track="reload" />
+    <link rel="icon" type="image/ico" href="<%= image_path("favicon.ico") %>" data-turbolinks-track="reload" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<%= image_path("ms-icon.png") %>">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <%= content_for(:announcements) %>
+
+    <%= render 'shared/header' %>
+
+    <main role="main" class="container">
+      <%= yield %>
+    </main>
+
+    <%= render 'shared/footer' %>
+  </body>
+</html>

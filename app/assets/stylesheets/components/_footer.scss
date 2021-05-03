@@ -1,0 +1,71 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer .h4 {
+  font-style: italic;
+}
+
+.footer::before {
+    position: absolute;
+    width: calc(617px / 2.7);
+    height: calc(277px / 2.7);
+    background: image-url('pen.svg') no-repeat;
+    background-size: contain;
+    bottom: 120px;
+    left: calc(50% - 100px);
+    content: '';
+
+  @include media-breakpoint-up(md) {
+    width: 500px;
+    height: 162px;
+    top: auto;
+    left: auto;
+    bottom: 50px;
+    right: -275px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    right: calc(50% - 750px);
+  }
+}
+
+.footer__grid {
+  display: grid;
+  grid-column-gap: map-get($spacers, 1);
+  grid-template-columns: repeat(12, 1fr);
+
+  padding-top: map-get($spacers, 3);
+  padding-bottom: map-get($spacers, 2);
+
+  @include media-breakpoint-up(md) {
+    padding-top: map-get($spacers, 5);
+    padding-bottom: map-get($spacers, 3);
+  }
+}
+
+.footer__nav {
+  grid-column: span 12;
+  margin-top: map-get($spacers, 2);
+  text-align: center;
+}
+
+.footer__credits {
+  grid-column: span 12;
+
+  position: relative;
+  text-align: center;
+  padding-top: 130px;
+
+  @include media-breakpoint-up(sm) {
+  }
+  @include media-breakpoint-up(md) {
+    padding-top: map-get($spacers, 4);
+    min-height: 200px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: map-get($spacers, 2);
+  }
+}
+

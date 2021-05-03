@@ -1,0 +1,33 @@
+.logo__link {
+  color: $primary;
+  padding-top: map-get($spacers, 2);
+
+  @include media-breakpoint-up(sm) {
+    padding-top: map-get($spacers, 0);
+  }
+}
+
+.logo__link:hover {
+  text-decoration: none;
+}
+
+.logo__image {
+  width: 30px;
+  margin-right: map-get($spacers, 1);
+
+  @include media-breakpoint-up(sm) {
+    width: 43px;
+    margin-right: map-get($spacers, 2);
+  }
+}
+
+.logo__brand {
+  font-weight: $display1-weight;
+  font-size: 30px;
+  font-style: normal;
+  vertical-align: top;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "action": "requested_action",
+  "check_run": {
+    "id": 536664382,
+    "node_id": "MDg6Q2hlY2tSdW41MzY2NjQzODI=",
+    "head_sha": "d700bae7daa6c2f96ba6c843f54576fac23eec18",
+    "external_id": "Z2lkOi8vdHlwby1jaS9HaXRodWI6OkNoZWNrU3VpdGUvMTEz",
+    "url": "https://api.github.com/repos/MikeRogers0/TypoCI/check-runs/536664382",
+    "html_url": "https://github.com/MikeRogers0/TypoCI/runs/536664382",
+    "details_url": "https://typoci.test/documentation",
+    "status": "completed",
+    "conclusion": "neutral",
+    "started_at": "2020-03-26T14:21:29Z",
+    "completed_at": "2020-03-26T14:21:31Z",
+    "output": {
+      "title": "Found a few typos",
+      "summary": "Have a suggestion or feedback for Typo CI? [Please get in touch](https://typoci.test/contact)!\n\n\n**3 typos** found in **3 files**",
+      "text": "Are you seeing false positives? [Help Typo CI by reporting them](https://typoci.com/).\n\n<details>\n<summary>Configuration</summary>\n\n```yaml\n---\n:dictionaries:\n- en\n- en_GB\n:excluded_files:\n- vendor/**/*\n- node_modules/**/*\n- \"*.key\"\n- \"*.enc\"\n- \"*.min.css\"\n- \"*.css.map\"\n- \"*.min.js\"\n- \"*.js.map\"\n- package-lock.json\n- yarn.lock\n- Gemfile.lock\n- \".typo-ci.yml\"\n- \"*.aff\"\n- \"*.dic\"\n- \"*.mk\"\n:excluded_words:\n- typoci\n:spellcheck_filenames: true\n\n```\n\nYou can control how Typo CI spellchecks your code via a [`.typo-ci.yml`](https://typoci.com/) file.\n</details>\n",
+      "annotations_count": 3,
+      "annotations_url": "https://api.github.com/repos/MikeRogers0/TypoCI/check-runs/536664382/annotations"
+    },
+    "name": "TypoCheck (Development)",
+    "check_suite": {
+      "id": 549521065,
+      "node_id": "MDEwOkNoZWNrU3VpdGU1NDk1MjEwNjU=",
+      "head_branch": "feature/report-spelling-mistakes",
+      "head_sha": "d700bae7daa6c2f96ba6c843f54576fac23eec18",
+      "status": "completed",
+      "conclusion": "neutral",
+      "url": "https://api.github.com/repos/MikeRogers0/TypoCI/check-suites/549521065",
+      "before": "7e58def9ee79065b7b25e7a5835eafe55af3c37c",
+      "after": "d700bae7daa6c2f96ba6c843f54576fac23eec18",
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/MikeRogers0/TypoCI/pulls/103",
+          "id": 393663295,
+          "number": 103,
+          "head": {
+            "ref": "feature/report-spelling-mistakes",
+            "sha": "d700bae7daa6c2f96ba6c843f54576fac23eec18",
+            "repo": {
+              "id": 210147439,
+              "url": "https://api.github.com/repos/MikeRogers0/TypoCI",
+              "name": "TypoCI"
+            }
+          },
+          "base": {
+            "ref": "master",
+            "sha": "9e54a01402c1326476887878fcd812824d75864a",
+            "repo": {
+              "id": 210147439,
+              "url": "https://api.github.com/repos/MikeRogers0/TypoCI",
+              "name": "TypoCI"
+            }
+          }
+        }
+      ],
+      "app": {
+        "id": 41496,
+        "slug": "typoci-localdev",
+        "node_id": "MDM6QXBwNDE0OTY=",
+        "owner": {
+          "login": "MikeRogers0",
+          "id": 320000,
+          "node_id": "MDQ6VXNlcjMyNTM4NA==",
+          "avatar_url": "https://avatars2.githubusercontent.com/u/320000?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/MikeRogers0",
+          "html_url": "https://github.com/MikeRogers0",
+          "followers_url": "https://api.github.com/users/MikeRogers0/followers",
+          "following_url": "https://api.github.com/users/MikeRogers0/following{/other_user}",
+          "gists_url": "https://api.github.com/users/MikeRogers0/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/MikeRogers0/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/MikeRogers0/subscriptions",
+          "organizations_url": "https://api.github.com/users/MikeRogers0/orgs",
+          "repos_url": "https://api.github.com/users/MikeRogers0/repos",
+          "events_url": "https://api.github.com/users/MikeRogers0/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/MikeRogers0/received_events",
+          "type": "User",
+          "site_admin": false
+        },
+        "name": "TypoCI (LocalDev)",
+        "description": "Fix those typos!",
+        "external_url": "https://typoci.test/",
+        "html_url": "https://github.com/apps/typoci-localdev",
+        "created_at": "2019-09-19T08:04:39Z",
+        "updated_at": "2019-10-14T21:25:15Z",
+        "permissions": {
+          "checks": "write",
+          "contents": "read",
+          "metadata": "read",
+          "pull_requests": "read"
+        },
+        "events": [
+          "check_suite",
+          "pull_request"
+        ]
+      },
+      "created_at": "2020-03-26T14:18:01Z",
+      "updated_at": "2020-03-26T14:21:32Z"
+    },
+    "app": {
+      "id": 41496,
+      "slug": "typoci-localdev",
+      "node_id": "MDM6QXBwNDE0OTY=",
+      "owner": {
+        "login": "MikeRogers0",
+        "id": 320000,
+        "node_id": "MDQ6VXNlcjMyNTM4NA==",
+        "avatar_url": "https://avatars2.githubusercontent.com/u/320000?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/MikeRogers0",
+        "html_url": "https://github.com/MikeRogers0",
+        "followers_url": "https://api.github.com/users/MikeRogers0/followers",
+        "following_url": "https://api.github.com/users/MikeRogers0/following{/other_user}",
+        "gists_url": "https://api.github.com/users/MikeRogers0/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/MikeRogers0/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/MikeRogers0/subscriptions",
+        "organizations_url": "https://api.github.com/users/MikeRogers0/orgs",
+        "repos_url": "https://api.github.com/users/MikeRogers0/repos",
+        "events_url": "https://api.github.com/users/MikeRogers0/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/MikeRogers0/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "name": "TypoCI (LocalDev)",
+      "description": "Fix those typos!",
+      "external_url": "https://typoci.test/",
+      "html_url": "https://github.com/apps/typoci-localdev",
+      "created_at": "2019-09-19T08:04:39Z",
+      "updated_at": "2019-10-14T21:25:15Z",
+      "permissions": {
+        "checks": "write",
+        "contents": "read",
+        "metadata": "read",
+        "pull_requests": "read"
+      },
+      "events": [
+        "check_suite",
+        "pull_request"
+      ]
+    },
+    "pull_requests": [
+      {
+        "url": "https://api.github.com/repos/MikeRogers0/TypoCI/pulls/103",
+        "id": 393663295,
+        "number": 103,
+        "head": {
+          "ref": "feature/report-spelling-mistakes",
+          "sha": "d700bae7daa6c2f96ba6c843f54576fac23eec18",
+          "repo": {
+            "id": 210147439,
+            "url": "https://api.github.com/repos/MikeRogers0/TypoCI",
+            "name": "TypoCI"
+          }
+        },
+        "base": {
+          "ref": "master",
+          "sha": "9e54a01402c1326476887878fcd812824d75864a",
+          "repo": {
+            "id": 210147439,
+            "url": "https://api.github.com/repos/MikeRogers0/TypoCI",
+            "name": "TypoCI"
+          }
+        }
+      }
+    ]
+  },
+  "requested_action": {
+    "identifier": "fix_errors"
+  },
+  "repository": {
+    "id": 210147439,
+    "node_id": "MDEwOlJlcG9zaXRvcnkyMTAxNDc0Mzk=",
+    "name": "TypoCI",
+    "full_name": "MikeRogers0/TypoCI",
+    "private": true,
+    "owner": {
+      "login": "MikeRogers0",
+      "id": 320000,
+      "node_id": "MDQ6VXNlcjMyNTM4NA==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/320000?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/MikeRogers0",
+      "html_url": "https://github.com/MikeRogers0",
+      "followers_url": "https://api.github.com/users/MikeRogers0/followers",
+      "following_url": "https://api.github.com/users/MikeRogers0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/MikeRogers0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/MikeRogers0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/MikeRogers0/subscriptions",
+      "organizations_url": "https://api.github.com/users/MikeRogers0/orgs",
+      "repos_url": "https://api.github.com/users/MikeRogers0/repos",
+      "events_url": "https://api.github.com/users/MikeRogers0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/MikeRogers0/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "html_url": "https://github.com/MikeRogers0/TypoCI",
+    "description": "Find Spelling errors in files in PRs",
+    "fork": false,
+    "url": "https://api.github.com/repos/MikeRogers0/TypoCI",
+    "forks_url": "https://api.github.com/repos/MikeRogers0/TypoCI/forks",
+    "keys_url": "https://api.github.com/repos/MikeRogers0/TypoCI/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/MikeRogers0/TypoCI/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/MikeRogers0/TypoCI/teams",
+    "hooks_url": "https://api.github.com/repos/MikeRogers0/TypoCI/hooks",
+    "issue_events_url": "https://api.github.com/repos/MikeRogers0/TypoCI/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/MikeRogers0/TypoCI/events",
+    "assignees_url": "https://api.github.com/repos/MikeRogers0/TypoCI/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/MikeRogers0/TypoCI/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/MikeRogers0/TypoCI/tags",
+    "blobs_url": "https://api.github.com/repos/MikeRogers0/TypoCI/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/MikeRogers0/TypoCI/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/MikeRogers0/TypoCI/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/MikeRogers0/TypoCI/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/MikeRogers0/TypoCI/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/MikeRogers0/TypoCI/languages",
+    "stargazers_url": "https://api.github.com/repos/MikeRogers0/TypoCI/stargazers",
+    "contributors_url": "https://api.github.com/repos/MikeRogers0/TypoCI/contributors",
+    "subscribers_url": "https://api.github.com/repos/MikeRogers0/TypoCI/subscribers",
+    "subscription_url": "https://api.github.com/repos/MikeRogers0/TypoCI/subscription",
+    "commits_url": "https://api.github.com/repos/MikeRogers0/TypoCI/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/MikeRogers0/TypoCI/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/MikeRogers0/TypoCI/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/MikeRogers0/TypoCI/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/MikeRogers0/TypoCI/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/MikeRogers0/TypoCI/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/MikeRogers0/TypoCI/merges",
+    "archive_url": "https://api.github.com/repos/MikeRogers0/TypoCI/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/MikeRogers0/TypoCI/downloads",
+    "issues_url": "https://api.github.com/repos/MikeRogers0/TypoCI/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/MikeRogers0/TypoCI/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/MikeRogers0/TypoCI/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/MikeRogers0/TypoCI/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/MikeRogers0/TypoCI/labels{/name}",
+    "releases_url": "https://api.github.com/repos/MikeRogers0/TypoCI/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/MikeRogers0/TypoCI/deployments",
+    "created_at": "2019-09-22T12:56:15Z",
+    "updated_at": "2020-03-25T12:05:48Z",
+    "pushed_at": "2020-03-26T14:18:01Z",
+    "git_url": "git://github.com/MikeRogers0/TypoCI.git",
+    "ssh_url": "git@github.com:MikeRogers0/TypoCI.git",
+    "clone_url": "https://github.com/MikeRogers0/TypoCI.git",
+    "svn_url": "https://github.com/MikeRogers0/TypoCI",
+    "homepage": "https://typoci.com/",
+    "size": 7398,
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "language": "Ruby",
+    "has_issues": true,
+    "has_projects": true,
+    "has_downloads": true,
+    "has_wiki": true,
+    "has_pages": false,
+    "forks_count": 0,
+    "mirror_url": null,
+    "archived": false,
+    "disabled": false,
+    "open_issues_count": 1,
+    "license": null,
+    "forks": 0,
+    "open_issues": 1,
+    "watchers": 0,
+    "default_branch": "master"
+  },
+  "sender": {
+    "login": "MikeRogers0",
+    "id": 320000,
+    "node_id": "MDQ6VXNlcjMyNTM4NA==",
+    "avatar_url": "https://avatars2.githubusercontent.com/u/320000?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/MikeRogers0",
+    "html_url": "https://github.com/MikeRogers0",
+    "followers_url": "https://api.github.com/users/MikeRogers0/followers",
+    "following_url": "https://api.github.com/users/MikeRogers0/following{/other_user}",
+    "gists_url": "https://api.github.com/users/MikeRogers0/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/MikeRogers0/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/MikeRogers0/subscriptions",
+    "organizations_url": "https://api.github.com/users/MikeRogers0/orgs",
+    "repos_url": "https://api.github.com/users/MikeRogers0/repos",
+    "events_url": "https://api.github.com/users/MikeRogers0/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/MikeRogers0/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "installation": {
+    "id": 6333414,
+    "node_id": "MDIzOkludGVncmF0aW9uSW5zdGFsbGF0aW9uNjMzMzQxNA=="
+  }
+}

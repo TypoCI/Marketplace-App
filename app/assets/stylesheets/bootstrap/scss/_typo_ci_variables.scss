@@ -1,0 +1,68 @@
+// Primary colours
+
+$primary: #197c01;
+$secondary: #219bd9;
+
+// Body
+$body-bg: #f5f6f7;
+$body-color: #010410;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      Alegreya, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:            $font-family-sans-serif;
+// stylelint-enable value-keyword-case
+
+$font-size-base: 1.125rem; // 18px
+
+$headings-font-family: 'Alegreya', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-weight:  700;
+
+$display1-weight:             700;
+$display2-weight:             700;
+$display3-weight:             700;
+$display4-weight:             700;
+
+$lead-font-size:              1.3333rem;
+$lead-font-weight:            300;
+
+$h1-font-size:                $font-size-base * 3.25;
+$h2-font-size:                $font-size-base * 2.75;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+//$h1-font-size:                4rem;
+//$h2-font-size:                3.375rem;
+//$h3-font-size:                2.125rem;
+//$h4-font-size:                1.5rem;
+//$h5-font-size:                $font-size-base;
+//$h6-font-size:                1rem;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$border-radius:               0.125rem;
+$border-radius-lg:            0.125rem;
+$border-radius-sm:            0.125rem;
+
+
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-border-radius: 0;
+
+$btn-padding-y: 0.625rem;
+$btn-padding-x: 1.25rem;
+
+$btn-font-family: 'Montserrat', sans-serif;
+$btn-font-size: 0.8rem;
+$btn-font-weight: 700;
+$btn-border-width: 2px;

@@ -1,0 +1,12 @@
+<div class="install">
+  <div class="install__avatar">
+    <%= image_tag "https://avatars0.githubusercontent.com/u/#{install.account_id}?s=60&v=4", class: 'img-fluid rounded-circle mx-auto d-block', width: 43 %>
+  </div>
+  <div class="install__name">
+    <%= install.account_login %>
+  </div>
+  <div class="install__actions">
+    <%= link_to 'Manage Repository Access', github_installation_url(install_id: install.install_id), class: 'btn btn-outline-primary', target: '_blank' %>
+    <%= link_to 'Manage Plan', github_change_plan_url(upgrade_plan_id: install.upgrade_plan.listing_id, account_id: install.account_id), class: 'btn btn-outline-primary', target: '_blank' %>
+  </div>
+</div>

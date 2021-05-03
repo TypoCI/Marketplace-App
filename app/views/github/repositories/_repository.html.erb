@@ -1,0 +1,12 @@
+<div class="border rounded bg-white p-4 mb-3">
+  <%= link_to repository.full_name, install_repository_path(install_id: @install.install_id, id: repository.name) %>
+
+  <hr />
+
+  <ul class="small list-unstyled m-0">
+    <li class="d-inline mr-4"><strong>Fork:</strong> <%= repository.fork.inspect %></li>
+    <li class="d-inline mr-4"><strong>Archived:</strong> <%= repository.archived.inspect %></li>
+    <li class="d-inline mr-4"><strong>Language:</strong> <%= repository.language %></li>
+    <li class="d-inline mr-4"><strong>Private:</strong> <%= repository.private %></li>
+  </ul>
+</div>
