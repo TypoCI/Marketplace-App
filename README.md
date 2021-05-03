@@ -11,11 +11,11 @@ Checks for spelling errors within commits by listening to webhooks from GitHub.
 </p>
 
 <p align="center">
-  <a target="_blank" rel="noopener noreferrer" href="https://github.com/TypoCI/Marketplace-App/workflows/RSpec/badge.svg">
-    <img src="https://github.com/TypoCI/Marketplace-App/workflows/RSpec/badge.svg" alt="RSpec" style="max-width:100%;">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/TypoCI/Marketplace-App/workflows/Tests/badge.svg">
+    <img src="https://github.com/TypoCI/Marketplace-App/workflows/Tests/badge.svg" alt="RSpec" style="max-width:100%;">
   </a>
-  <a target="_blank" rel="noopener noreferrer" href="https://github.com/TypoCI/Marketplace-App/workflows/Linters/badge.svg">
-    <img src="https://github.com/TypoCI/Marketplace-App/workflows/Linters/badge.svg" alt="Linters" style="max-width:100%;">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/TypoCI/Marketplace-App/workflows/Standard/badge.svg">
+    <img src="https://github.com/TypoCI/Marketplace-App/workflows/Standard/badge.svg" alt="Linters" style="max-width:100%;">
   </a>
 </p>
 
