@@ -126,14 +126,6 @@ RSpec.describe Github::CheckSuites::UpdateRemoteJob, type: :job do
     end
   end
 
-  describe "#actions" do
-    subject { instance_class.actions }
-
-    let(:response) { [] }
-
-    it { is_expected.to eq(response) }
-  end
-
   describe "#check_run_name" do
     subject { instance_class.check_run_name }
 
