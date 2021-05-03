@@ -25,8 +25,7 @@ class Github::CheckSuites::UpdateRemoteJob < ApplicationJob
           annotations: annotations[0..49],
           title: output_title,
           summary: output_summary
-        },
-        actions: actions
+        }
       }
     )
     @github_check_suite.update!(check_run_id: @created_check_run.id)
