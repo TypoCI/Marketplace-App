@@ -18,7 +18,7 @@ Rails.application.config.content_security_policy do |policy|
   #   # policy.report_uri "/csp-violation-report-endpoint"
 
   # Upgrade insecure requests.
-  policy.upgrade_insecure_requests !fetch("SKIP_CSP_UPGRADE_INSECURE_REQUESTS", false)
+  policy.upgrade_insecure_requests !ENV.fetch("SKIP_CSP_UPGRADE_INSECURE_REQUESTS", false)
 end
 
 # If you are using UJS then enable automatic nonce generation
