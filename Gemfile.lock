@@ -226,7 +226,7 @@ GEM
       omniauth (>= 1.9, < 3)
     orm_adapter (0.5.0)
     parallel (1.20.1)
-    parser (3.0.0.0)
+    parser (3.0.1.1)
       ast (~> 2.4.1)
     pg (1.2.3)
     pig-ci-rails (1.0.1)
@@ -316,7 +316,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
-    rubocop (1.9.0)
+    rubocop (1.12.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -325,15 +325,11 @@ GEM
       rubocop-ast (>= 1.2.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.4.1)
-      parser (>= 2.7.1.5)
-    rubocop-rails (2.9.1)
-      activesupport (>= 4.2.0)
-      rack (>= 1.1)
+    rubocop-ast (1.5.0)
+      parser (>= 3.0.1.1)
+    rubocop-performance (1.10.1)
       rubocop (>= 0.90.0, < 2.0)
-    rubocop-rspec (2.1.0)
-      rubocop (~> 1.0)
-      rubocop-ast (>= 1.1.0)
+      rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.4)
     rubyzip (2.3.0)
@@ -383,6 +379,9 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    standard (1.0.5)
+      rubocop (= 1.12.1)
+      rubocop-performance (= 1.10.1)
     statsd-ruby (1.5.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
@@ -455,9 +454,6 @@ DEPENDENCIES
   redis (~> 4.0)
   rendezvous
   rspec-rails (~> 4.0)
-  rubocop
-  rubocop-rails
-  rubocop-rspec
   sass-rails (>= 6)
   selenium-webdriver
   sentry-raven
@@ -465,6 +461,7 @@ DEPENDENCIES
   sidekiq-cron!
   simplecov
   slack-ruby-bot
+  standard
   turbolinks (~> 5)
   webdrivers
   webmock

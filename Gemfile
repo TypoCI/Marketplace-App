@@ -45,9 +45,7 @@ group :development do
   gem 'letter_opener'
   gem 'letter_opener_web', '~> 1.0'
   gem 'listen', '>= 3.0.5', '< 3.5'
-  gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec', require: false
+  gem 'standard'
 end
 
 group :test do
