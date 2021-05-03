@@ -1,21 +1,21 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Spellcheck::WordPart do
   let(:instance_class) { described_class.new(word, configuration: configuration) }
-  let(:word) { 'madeeup' }
+  let(:word) { "madeeup" }
   let(:configuration) do
     Spellcheck::Configuration.new(
-      dictionaries: ['en']
+      dictionaries: ["en"]
     )
   end
 
-  describe '#valid?' do
+  describe "#valid?" do
     subject { instance_class.valid? }
 
     it { is_expected.to eq(false) }
 
-    context 'compound word' do
-      let(:word) { 'topbar' }
+    context "compound word" do
+      let(:word) { "topbar" }
 
       it { is_expected.to eq(true) }
     end
@@ -23,7 +23,7 @@ RSpec.describe Spellcheck::WordPart do
     context 'with "madeeup" as an excluded word' do
       let(:configuration) do
         Spellcheck::Configuration.new(
-          excluded_words: ['madeeup']
+          excluded_words: ["madeeup"]
         )
       end
 
@@ -31,11 +31,11 @@ RSpec.describe Spellcheck::WordPart do
     end
   end
 
-  describe '#suggestions' do
+  describe "#suggestions" do
     subject { instance_class.suggestions }
 
-    let(:word) { 'topbar' }
+    let(:word) { "topbar" }
 
-    it { is_expected.to eq(['top bar', 'top-bar', 'toolbar']) }
+    it { is_expected.to eq(["top bar", "top-bar", "toolbar"]) }
   end
 end

@@ -5,7 +5,7 @@ class Identity < ApplicationRecord
   belongs_to :user
 
   enum provider: {
-    github: 'github'
+    github: "github"
   }
 
   validates :provider, presence: true
@@ -54,6 +54,6 @@ class Identity < ApplicationRecord
   private
 
   def attr_encrypted_key
-    @attr_encrypted_key ||= ENV['ATTR_ENCRYPTED_KEY']
+    @attr_encrypted_key ||= ENV["ATTR_ENCRYPTED_KEY"]
   end
 end

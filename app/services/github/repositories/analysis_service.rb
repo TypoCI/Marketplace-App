@@ -4,10 +4,10 @@
 class Github::Repositories::AnalysisService
   def initialize(repository)
     @repository = repository
-    @repository_owner = @repository.split('/').first
-    @repository_name = @repository.split('/').last
+    @repository_owner = @repository.split("/").first
+    @repository_name = @repository.split("/").last
     @repository_url = "git://github.com/#{@repository}.git"
-    @repositories_path = Rails.root.join('tmp', 'repos', @repository_owner)
+    @repositories_path = Rails.root.join("tmp", "repos", @repository_owner)
     @repository_path = @repositories_path.join(@repository_name)
   end
 
@@ -26,7 +26,7 @@ class Github::Repositories::AnalysisService
       # FileUtils.rm_r(@repository_path)
       # Git.clone(@repository_url, @repository_name, path: @repositories_path, depth: '1')
     else
-      Git.clone(@repository_url, @repository_name, path: @repositories_path, depth: '1')
+      Git.clone(@repository_url, @repository_name, path: @repositories_path, depth: "1")
     end
   end
 
@@ -36,13 +36,12 @@ class Github::Repositories::AnalysisService
   end
 
   def analyses_files!
-    return # Skip threading for now.
-
-    threads = []
-    files.in_groups_of((files.size / 2).to_i, false).each_with_index do |group, _index|
-      threads << Thread.new { group.collect(&:invalid_words) }
-    end
-    threads.each(&:join)
+    # Skip threading for now.
+    # threads = []
+    # files.in_groups_of((files.size / 2).to_i, false).each_with_index do |group, _index|
+    # threads << Thread.new { group.collect(&:invalid_words) }
+    # end
+    # threads.each(&:join)
   end
 
   def all_annotations
@@ -58,15 +57,15 @@ class Github::Repositories::AnalysisService
   end
 
   def configuration_options
-    if @repository_path.join('.typo-ci.yml').exist?
-      YAML.safe_load(@repository_path.join('.typo-ci.yml').read)
+    if @repository_path.join(".typo-ci.yml").exist?
+      YAML.safe_load(@repository_path.join(".typo-ci.yml").read)
     else
       {}
     end
   end
 
   def repository_files
-    @repository_files ||= FileList.new(@repository_path.join('**/*'))
+    @repository_files ||= FileList.new(@repository_path.join("**/*"))
   end
 
   def files

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Slack::UsageSummaryJob, type: :job do
   let(:instance_class) { described_class.new }
@@ -9,7 +9,7 @@ RSpec.describe Slack::UsageSummaryJob, type: :job do
     create(:github_check_suite, :with_analysis_performed)
   end
 
-  describe '#perform' do
+  describe "#perform" do
     subject { instance_class.perform }
 
     it do

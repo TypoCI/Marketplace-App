@@ -39,11 +39,11 @@ class Webhooks::Github::CheckSuite
   end
 
   def pull_requests
-    check_suite['pull_requests']
+    check_suite["pull_requests"]
   end
 
   def github_check_suite
-    @github_check_suite ||= install.check_suites.find_or_initialize_by(github_id: "check_suite-#{check_suite['id']}") do |new_github_check_suite|
+    @github_check_suite ||= install.check_suites.find_or_initialize_by(github_id: "check_suite-#{check_suite["id"]}") do |new_github_check_suite|
       new_github_check_suite.head_branch = check_suite[:head_branch]
       new_github_check_suite.head_sha = check_suite[:head_sha]
       new_github_check_suite.base_sha = check_suite[:before]
@@ -66,6 +66,6 @@ class Webhooks::Github::CheckSuite
   end
 
   def install
-    @install ||= Github::Install.find_by!(install_id: installation['id'])
+    @install ||= Github::Install.find_by!(install_id: installation["id"])
   end
 end

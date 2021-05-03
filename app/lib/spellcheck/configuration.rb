@@ -1,42 +1,41 @@
-require 'json-schema'
+require "json-schema"
 
 class Spellcheck::Configuration
   attr_reader :custom_configuration
-  attr_writer :excluded_words
   attr_accessor :known_words
 
   DEFAULT_VALUES = {
     dictionaries: %w[en en_GB],
     excluded_files: [
-      'vendor/**/*',
-      'node_modules/**/*',
-      '*.key',
-      '*.enc',
-      '*.min.css',
-      '*.css.map',
-      '*.min.js',
-      '*.js.map',
-      'package-lock.json',
-      'yarn.lock',
-      'Gemfile.lock',
-      '.typo-ci.yml',
-      '.github/.typo-ci.yml',
-      '*.aff',
-      '*.dic',
-      '*.mk'
+      "vendor/**/*",
+      "node_modules/**/*",
+      "*.key",
+      "*.enc",
+      "*.min.css",
+      "*.css.map",
+      "*.min.js",
+      "*.js.map",
+      "package-lock.json",
+      "yarn.lock",
+      "Gemfile.lock",
+      ".typo-ci.yml",
+      ".github/.typo-ci.yml",
+      "*.aff",
+      "*.dic",
+      "*.mk"
     ],
-    excluded_words: ['typoci'],
+    excluded_words: ["typoci"],
     spellcheck_filenames: true
   }.freeze
 
   SCHEMA = {
-    type: 'object',
+    type: "object",
     required: [],
     properties: {
       dictionaries: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string',
+          type: "string",
           enum: %w[
             de
             en
@@ -52,19 +51,19 @@ class Spellcheck::Configuration
         }
       },
       excluded_words: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string'
+          type: "string"
         }
       },
       excluded_files: {
-        type: 'array',
+        type: "array",
         items: {
-          type: 'string'
+          type: "string"
         }
       },
       spellcheck_filenames: {
-        type: 'boolean'
+        type: "boolean"
       }
     }
   }.freeze
@@ -72,14 +71,14 @@ class Spellcheck::Configuration
   def initialize(custom_configuration = {})
     @known_words = {}
     @custom_configuration = if custom_configuration.is_a?(Hash)
-                              custom_configuration.symbolize_keys.slice(*DEFAULT_VALUES.keys)
-                            else
-                              {}
-                            end
+      custom_configuration.symbolize_keys.slice(*DEFAULT_VALUES.keys)
+    else
+      {}
+    end
   end
 
   def dictionaries
-    @dictionaries ||= (to_h[:dictionaries] + ['combined']).collect do |dictionary|
+    @dictionaries ||= (to_h[:dictionaries] + ["combined"]).collect do |dictionary|
       Spellcheck::Dictionaries.imported[dictionary]
     end
   end
@@ -107,7 +106,7 @@ class Spellcheck::Configuration
   def excluded_file?(filename)
     # Taken from rubocop
     excluded_files.any? do |pattern|
-      if filename.start_with?('.')
+      if filename.start_with?(".")
         File.fnmatch?(pattern, filename, File::FNM_EXTGLOB | File::FNM_DOTMATCH)
       else
         File.fnmatch?(pattern, filename, File::FNM_EXTGLOB)
@@ -117,10 +116,10 @@ class Spellcheck::Configuration
 
   def to_h
     @to_h ||= if custom_configuration_valid?
-                DEFAULT_VALUES.merge(custom_configuration)
-              else
-                DEFAULT_VALUES.dup
-              end
+      DEFAULT_VALUES.merge(custom_configuration)
+    else
+      DEFAULT_VALUES.dup
+    end
   end
 
   private

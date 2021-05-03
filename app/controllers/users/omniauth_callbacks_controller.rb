@@ -16,10 +16,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if identity.persisted? && identity.user.persisted?
       sign_in_and_redirect(identity.user, event: :authentication)
-      set_flash_message(:notice, :success, kind: 'GitHub') if is_navigational_format?
+      set_flash_message(:notice, :success, kind: "GitHub") if is_navigational_format?
     else
-      raise identity.user.errors.inspect
-      redirect_to root_path, alert: t('.alert')
+      redirect_to root_path, alert: t(".alert")
     end
   end
 
@@ -30,10 +29,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def after_sign_in_path_for(_resource)
-    session.dig('user_return_to') || root_path
+    session.dig("user_return_to") || root_path
   end
 
   def auth
-    request.env['omniauth.auth']
+    request.env["omniauth.auth"]
   end
 end

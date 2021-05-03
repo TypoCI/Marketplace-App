@@ -1,8 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe 'Users::SessionsController#new', type: :request do
+describe "Users::SessionsController#new", type: :request do
   subject do
-    get new_user_session_url(subdomain: 'app')
+    get new_user_session_url(subdomain: "app")
   end
 
   it do

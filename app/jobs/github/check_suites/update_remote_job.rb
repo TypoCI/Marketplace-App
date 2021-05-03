@@ -48,26 +48,16 @@ class Github::CheckSuites::UpdateRemoteJob < ApplicationJob
     end
   end
 
-  def actions
-    return []
-
-    [{
-      label: I18n.t('.actions.reported.label', scope: ['jobs', self.class.name.underscore]),
-      description: I18n.t('.actions.reported.description', scope: ['jobs', self.class.name.underscore]),
-      identifier: 'reported'
-    }]
-  end
-
   def check_run_name
-    I18n.t("check_run_name.#{Rails.env}", scope: ['jobs', self.class.name.underscore])
+    I18n.t("check_run_name.#{Rails.env}", scope: ["jobs", self.class.name.underscore])
   end
 
   def output_title
     if @github_check_suite.custom_configuration_present_and_invalid?
-      I18n.t('output_title.invalid_custom_configuration', scope: ['jobs', self.class.name.underscore])
+      I18n.t("output_title.invalid_custom_configuration", scope: ["jobs", self.class.name.underscore])
     else
-      I18n.t('output_title', count: @github_check_suite.spelling_mistakes_count,
-                             scope: ['jobs', self.class.name.underscore])
+      I18n.t("output_title", count: @github_check_suite.spelling_mistakes_count,
+                             scope: ["jobs", self.class.name.underscore])
     end
   end
 
@@ -79,23 +69,23 @@ class Github::CheckSuites::UpdateRemoteJob < ApplicationJob
 
   def output_summary_header
     I18n.t(
-      'output_summary_header',
-      scope: ['jobs', self.class.name.underscore]
+      "output_summary_header",
+      scope: ["jobs", self.class.name.underscore]
     )
   end
 
   def output_summary_body
     I18n.t(
-      'output_summary_body',
+      "output_summary_body",
       count: @github_check_suite.spelling_mistakes_count,
       output_files_count: output_files_count,
-      scope: ['jobs', self.class.name.underscore]
+      scope: ["jobs", self.class.name.underscore]
     )
   end
 
   def output_files_count
-    I18n.t('output_files_count', count: @github_check_suite.files_analysed_count,
-                                 scope: ['jobs', self.class.name.underscore])
+    I18n.t("output_files_count", count: @github_check_suite.files_analysed_count,
+                                 scope: ["jobs", self.class.name.underscore])
   end
 
   def output_summary_actions
@@ -103,16 +93,16 @@ class Github::CheckSuites::UpdateRemoteJob < ApplicationJob
 
     if @github_check_suite.custom_configuration_present_and_invalid?
       actions << I18n.t(
-        'output_summary_actions.invalid_custom_configuration',
+        "output_summary_actions.invalid_custom_configuration",
         documentation_url: Rails.application.routes.url_helpers.documentation_url,
-        scope: ['jobs', self.class.name.underscore]
+        scope: ["jobs", self.class.name.underscore]
       )
     end
 
     actions << I18n.t(
-      'output_summary_actions.feedback',
+      "output_summary_actions.feedback",
       contact_url: Rails.application.routes.url_helpers.contact_url,
-      scope: ['jobs', self.class.name.underscore]
+      scope: ["jobs", self.class.name.underscore]
     )
 
     actions.join("\n")

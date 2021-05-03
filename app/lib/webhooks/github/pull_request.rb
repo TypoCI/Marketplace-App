@@ -35,18 +35,18 @@ class Webhooks::Github::PullRequest
   end
 
   def pull_request
-    @payload['pull_request']
+    @payload["pull_request"]
   end
 
   def sender
-    @payload['sender']
+    @payload["sender"]
   end
 
   def repository
-    @payload['repository']
+    @payload["repository"]
   end
 
   def install
-    @install ||= Github::Install.find_by!(install_id: installation['id'])
+    @install ||= Github::Install.find_by!(install_id: installation["id"])
   end
 end

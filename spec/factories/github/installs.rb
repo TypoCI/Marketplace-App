@@ -1,20 +1,20 @@
 FactoryBot.define do
-  factory :github_install, class: 'Github::Install' do
-    app_id { '22929' }
+  factory :github_install, class: "Github::Install" do
+    app_id { "22929" }
     sequence :install_id
 
     account_login { Faker::Company.name }
     sequence :account_id
-    account_type { 'User' }
+    account_type { "User" }
 
     repositories_count { 0 }
 
     trait :with_email do
-      email { 'sample@example.com' }
+      email { "sample@example.com" }
     end
 
     trait :organization do
-      account_type { 'Organization' }
+      account_type { "Organization" }
     end
 
     trait :with_check_suite do
@@ -25,12 +25,12 @@ FactoryBot.define do
 
     trait :with_plan do
       plan_id { 4979 }
-      plan_name { 'Organization' }
+      plan_name { "Organization" }
     end
 
     trait :with_open_source_plan do
       plan_id { 4980 }
-      plan_name { 'Open Source' }
+      plan_name { "Open Source" }
     end
   end
 end

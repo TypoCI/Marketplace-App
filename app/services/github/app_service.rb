@@ -11,12 +11,12 @@ class Github::AppService
 
   def private_key
     @private_key ||= OpenSSL::PKey::RSA.new(
-      ENV['GITHUB_PRIVATE_KEY'].gsub('\n', "\n")
+      ENV["GITHUB_PRIVATE_KEY"].gsub('\n', "\n")
     )
   end
 
   def app_identifier
-    ENV['GITHUB_APP_IDENTIFIER']
+    ENV["GITHUB_APP_IDENTIFIER"]
   end
 
   def jwt
@@ -28,7 +28,7 @@ class Github::AppService
         iss: app_identifier
       },
       private_key,
-      'RS256'
+      "RS256"
     )
   end
 end

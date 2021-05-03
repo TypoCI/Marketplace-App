@@ -34,6 +34,6 @@ class Webhooks::Github::InstallationRepositories
   end
 
   def install
-    @install ||= Github::Install.find_by!(install_id: installation['id'], app_id: installation['app_id'])
+    @install ||= Github::Install.find_by!(install_id: installation["id"], app_id: installation["app_id"])
   end
 end

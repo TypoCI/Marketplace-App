@@ -4,12 +4,12 @@ class ApplicationController < ActionController::Base
 
   def setup_default_meta_tags_from_i18n
     set_meta_tags(
-      site: 'Typo CI',
-      title: t('.title', default: '', scope: %w[meta_tags]),
-      description: t('.description', default: '', scope: %w[meta_tags]),
-      charset: 'utf-8',
+      site: "Typo CI",
+      title: t(".title", default: "", scope: %w[meta_tags]),
+      description: t(".description", default: "", scope: %w[meta_tags]),
+      charset: "utf-8",
       canonical: canonical_url,
-      separator: '|',
+      separator: "|",
       reverse: true
     )
   end

@@ -1,35 +1,35 @@
 class Github::CheckSuite < ApplicationRecord
-  BannedSenderLogins = [
-    'tensorflow-copybara',
-    'gatsbybot',
-    'vlc-mirrorer',
-    'speedy19830509' # User is shadow banned on GitHub
+  BLOCKED_AUTHORS = %w[
+    "tensorflow-copybara",
+    "gatsbybot",
+    "vlc-mirrorer",
+    "speedy19830509" # User is shadow banned on GitHub
   ].freeze
 
-  belongs_to :install, class_name: 'Github::Install', foreign_key: :github_install_id, counter_cache: true
+  belongs_to :install, class_name: "Github::Install", foreign_key: :github_install_id, counter_cache: true
 
   enum status: {
-    queued: 'queued',
-    in_progress: 'in_progress',
-    completed: 'completed'
+    queued: "queued",
+    in_progress: "in_progress",
+    completed: "completed"
   }, _prefix: :status
 
   enum conclusion: {
-    pending: 'pending',
-    success: 'success',
-    failure: 'failure',
-    neutral: 'neutral',
-    cancelled: 'cancelled',
-    timed_out: 'timed_out',
-    action_required: 'action_required',
-    skipped: 'skipped'
+    pending: "pending",
+    success: "success",
+    failure: "failure",
+    neutral: "neutral",
+    cancelled: "cancelled",
+    timed_out: "timed_out",
+    action_required: "action_required",
+    skipped: "skipped"
   }, _prefix: :conclusion
 
   enum conclusion_skipped_reason: {
-    none: 'none',
-    unanalysable: 'unanalysable',
-    unanalysable_pull_request: 'unanalysable_pull_request',
-    private_repositories_not_supported: 'private_repositories_not_supported'
+    none: "none",
+    unanalysable: "unanalysable",
+    unanalysable_pull_request: "unanalysable_pull_request",
+    private_repositories_not_supported: "private_repositories_not_supported"
   }, _prefix: :conclusion_skipped_reason
 
   validates :github_id, presence: true
@@ -52,7 +52,7 @@ class Github::CheckSuite < ApplicationRecord
 
   def analysable?
     return false if sender_login_banned?
-    return false if head_branch == 'gh-pages' && first_commit?
+    return false if head_branch == "gh-pages" && first_commit?
     return false if newer_commits_on_branch_from_sender_exist?
 
     true
@@ -75,7 +75,7 @@ class Github::CheckSuite < ApplicationRecord
   end
 
   def first_commit?
-    base_sha == '0000000000000000000000000000000000000000'
+    base_sha == "0000000000000000000000000000000000000000"
   end
 
   def reported!
@@ -90,11 +90,11 @@ class Github::CheckSuite < ApplicationRecord
     custom_configuration_file? && !custom_configuration_valid?
   end
 
-  def conclusion_skipped!(conclusion_skipped_reason: 'unanalysable')
+  def conclusion_skipped!(conclusion_skipped_reason: "unanalysable")
     update(
       conclusion_skipped_reason: conclusion_skipped_reason,
-      conclusion: 'skipped',
-      status: 'completed'
+      conclusion: "skipped",
+      status: "completed"
     )
   end
 
@@ -102,7 +102,7 @@ class Github::CheckSuite < ApplicationRecord
     return true unless repository_fork?
     return true unless pull_request?
 
-    pull_request_user_type != 'Bot'
+    pull_request_user_type != "Bot"
   end
 
   private
@@ -119,6 +119,6 @@ class Github::CheckSuite < ApplicationRecord
   end
 
   def sender_login_banned?
-    sender_type == 'Bot' || sender_login.in?(BannedSenderLogins)
+    sender_type == "Bot" || sender_login.in?(BLOCKED_AUTHORS)
   end
 end

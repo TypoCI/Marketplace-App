@@ -10,7 +10,7 @@ class Spellcheck::FileName < Spellcheck::Content
         path: @content,
         start_line: 1,
         end_line: 1,
-        annotation_level: 'warning',
+        annotation_level: "warning",
         title: "Filename: #{@content}",
         message: message(invalid_word)
       }
@@ -18,6 +18,6 @@ class Spellcheck::FileName < Spellcheck::Content
   end
 
   def normalized_content
-    @normalized_content ||= @content.encode('UTF-8').gsub(/[^a-z \n]/i, ' ')
+    @normalized_content ||= @content.encode("UTF-8").gsub(/[^a-z \n]/i, " ")
   end
 end

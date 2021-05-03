@@ -9,11 +9,11 @@ class GithubOauthService
   end
 
   def installations
-    client.get('user/installations', accept: 'application/vnd.github.machine-man-preview+json').installations || []
+    client.get("user/installations", accept: "application/vnd.github.machine-man-preview+json").installations || []
   end
 
   def list_repositories(account_login, page: 0)
     client.find_installation_repositories_for_user(account_login,
-                                                   accept: 'application/vnd.github.machine-man-preview+json', page: page)
+      accept: "application/vnd.github.machine-man-preview+json", page: page)
   end
 end

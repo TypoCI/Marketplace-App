@@ -1,5 +1,5 @@
 class Github::Install < ApplicationRecord
-  has_many :check_suites, dependent: :destroy, foreign_key: :github_install_id, class_name: 'Github::CheckSuite'
+  has_many :check_suites, dependent: :destroy, foreign_key: :github_install_id, class_name: "Github::CheckSuite"
 
   validates :account_id, presence: true
   validates :account_type, presence: true
@@ -20,7 +20,7 @@ class Github::Install < ApplicationRecord
   end
 
   def to_s
-    ["app_id:#{app_id}", "install_id:#{install_id}", "account_login:#{account_login}"].join(',')
+    ["app_id:#{app_id}", "install_id:#{install_id}", "account_login:#{account_login}"].join(",")
   end
 
   def plan
@@ -28,14 +28,14 @@ class Github::Install < ApplicationRecord
   end
 
   def organization?
-    account_type == 'Organization'
+    account_type == "Organization"
   end
 
   def upgrade_plan
     @upgrade_plan ||= if organization?
-                        Github::Plan.organization
-                      else
-                        Github::Plan.user
-                      end
+      Github::Plan.organization
+    else
+      Github::Plan.user
+    end
   end
 end

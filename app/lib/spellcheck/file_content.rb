@@ -19,7 +19,7 @@ class Spellcheck::FileContent < Spellcheck::Content
           end_line: index + 1, # File contents start at 1
           start_column: start_column,
           end_column: start_column + invalid_word.word.length,
-          annotation_level: 'warning',
+          annotation_level: "warning",
           title: invalid_word.word,
           message: message(invalid_word)
         }

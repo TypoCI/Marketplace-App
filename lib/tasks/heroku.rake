@@ -1,10 +1,10 @@
 namespace :heroku do
-  desc 'Run an ActiveJob - Called within one off dynos, normally via the API'
+  desc "Run an ActiveJob - Called within one off dynos, normally via the API"
   task run_active_job: [:environment] do
-    job_class = ENV['ONE_OFF_JOB_CLASS']
-    json_arguments = ENV['ONE_OFF_JOB_ARGUMENTS']
+    job_class = ENV["ONE_OFF_JOB_CLASS"]
+    json_arguments = ENV["ONE_OFF_JOB_ARGUMENTS"]
 
-    raise 'Bad Arguments' if job_class.nil? || json_arguments.nil?
+    raise "Bad Arguments" if job_class.nil? || json_arguments.nil?
 
     Rails.logger.info("[rake heroku:run_active_job][#{job_class}] starting with #{json_arguments.inspect}")
 

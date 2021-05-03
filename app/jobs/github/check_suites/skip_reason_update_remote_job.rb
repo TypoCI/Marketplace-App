@@ -30,16 +30,16 @@ class Github::CheckSuites::SkipReasonUpdateRemoteJob < ApplicationJob
   end
 
   def output_title
-    I18n.t('output_title', scope: ['jobs', self.class.name.underscore])
+    I18n.t("output_title", scope: ["jobs", self.class.name.underscore])
   end
 
   def output_summary
-    I18n.t('output_summary', scope: ['jobs', self.class.name.underscore],
+    I18n.t("output_summary", scope: ["jobs", self.class.name.underscore],
                              github_change_plan_url: github_change_plan_url)
   end
 
   def check_run_name
-    I18n.t("check_run_name.#{Rails.env}", scope: ['jobs', self.class.name.underscore])
+    I18n.t("check_run_name.#{Rails.env}", scope: ["jobs", self.class.name.underscore])
   end
 
   def install

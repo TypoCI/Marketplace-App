@@ -32,7 +32,7 @@ class Github::Installation::UpdateMarketplacePurchaseJob < ApplicationJob
       on_free_trial: nil,
       free_trial_ends_on: nil,
       next_billing_on: nil,
-      billing_cycle: 'monthly',
+      billing_cycle: "monthly",
       mrr_in_cents: 0
     )
   end
@@ -43,14 +43,14 @@ class Github::Installation::UpdateMarketplacePurchaseJob < ApplicationJob
 
   def plan_accounting_for_pending_change
     @plan_accounting_for_pending_change ||= if marketplace_pending_change_is_upgrade?
-                                              marketplace_plan[:marketplace_pending_change]
-                                            else
-                                              marketplace_plan[:marketplace_purchase]
-                                            end
+      marketplace_plan[:marketplace_pending_change]
+    else
+      marketplace_plan[:marketplace_purchase]
+    end
   end
 
   def mrr_in_cents
-    if marketplace_plan[:marketplace_purchase][:billing_cycle] == 'monthly'
+    if marketplace_plan[:marketplace_purchase][:billing_cycle] == "monthly"
       marketplace_plan[:marketplace_purchase][:plan][:monthly_price_in_cents]
     else
       marketplace_plan[:marketplace_purchase][:plan][:yearly_price_in_cents] / 12

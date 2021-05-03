@@ -15,7 +15,7 @@ class Github::PullRequests::InfoService
 
   def pull_request
     @pull_request ||= github_install_service.get_pull_request(@github_check_suite.pull_request.base_repo_full_name,
-                                                              @github_check_suite.pull_request.number)
+      @github_check_suite.pull_request.number)
   end
 
   def github_install_service

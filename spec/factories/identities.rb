@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :identity do
-    provider { 'github' }
+    provider { "github" }
     sequence :uid
     association :user
 

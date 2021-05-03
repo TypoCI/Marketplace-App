@@ -7,8 +7,8 @@ class CreateGithubCheckSuites < ActiveRecord::Migration[6.0]
       t.string :head_branch, null: false
       t.string :repository_full_name, null: false
       t.json :pull_request_numbers, default: []
-      t.string :status, default: 'queued', null: false
-      t.string :conclusion, default: 'pending', null: false
+      t.string :status, default: "queued", null: false
+      t.string :conclusion, default: "pending", null: false
       t.datetime :started_at
       t.datetime :completed_at
 
