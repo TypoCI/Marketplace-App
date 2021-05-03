@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Github::Installation::UpdateMarketplacePurchaseJob, type: :job do
   let(:github_install) { create(:github_install) }
@@ -8,13 +8,13 @@ RSpec.describe Github::Installation::UpdateMarketplacePurchaseJob, type: :job do
   let(:marketplace_plan) do
     {
       url: "https://api.github.com/users/#{github_install.account_login}",
-      type: 'User',
+      type: "User",
       id: github_install.account_id,
       login: github_install.account_login,
       email: nil,
       marketplace_pending_change: marketplace_pending_change,
       marketplace_purchase: {
-        billing_cycle: 'monthly',
+        billing_cycle: "monthly",
         unit_count: 1,
         on_free_trial: false,
         free_trial_ends_on: nil,
@@ -22,25 +22,25 @@ RSpec.describe Github::Installation::UpdateMarketplacePurchaseJob, type: :job do
         updated_at: Time.zone.today,
         next_billing_date: nil,
         plan: {
-          url: 'https://api.github.com/marketplace_listing/plans/4756',
-          accounts_url: 'https://api.github.com/marketplace_listing/plans/4756/accounts',
+          url: "https://api.github.com/marketplace_listing/plans/4756",
+          accounts_url: "https://api.github.com/marketplace_listing/plans/4756/accounts",
           id: 4756,
           number: 1,
-          name: 'Free',
-          description: 'Unlimited users. Unlimited repos. Unlimited spell checks.',
+          name: "Free",
+          description: "Unlimited users. Unlimited repos. Unlimited spell checks.",
           monthly_price_in_cents: 0,
           yearly_price_in_cents: 0,
-          price_model: 'FREE',
+          price_model: "FREE",
           has_free_trial: false,
           unit_name: nil,
-          state: 'published',
-          bullets: ['Unlimited users', 'Unlimited repos', 'Unlimited spell checks']
+          state: "published",
+          bullets: ["Unlimited users", "Unlimited repos", "Unlimited spell checks"]
         }
       }
     }
   end
 
-  describe '#perform' do
+  describe "#perform" do
     subject { instance_class.perform(github_install) }
 
     before do
@@ -52,13 +52,13 @@ RSpec.describe Github::Installation::UpdateMarketplacePurchaseJob, type: :job do
       expect { subject }.to change(github_install, :plan_id).from(nil).to(4756)
     end
 
-    context 'marketplace_pending_change contains an upgrade' do
+    context "marketplace_pending_change contains an upgrade" do
       let(:github_install) { create(:github_install, plan_id: 4756) }
       let(:marketplace_pending_change) do
         {
           plan: {
             id: 4978,
-            name: 'Individual'
+            name: "Individual"
           },
           effective_date: Time.zone.now + 2.days
         }
@@ -69,13 +69,13 @@ RSpec.describe Github::Installation::UpdateMarketplacePurchaseJob, type: :job do
       end
     end
 
-    context 'marketplace_pending_change contains a downgrade' do
+    context "marketplace_pending_change contains a downgrade" do
       let(:github_install) { create(:github_install, plan_id: 4756) }
       let(:marketplace_pending_change) do
         {
           plan: {
             id: 4980,
-            name: 'Open Source'
+            name: "Open Source"
           },
           effective_date: Time.zone.now + 2.days
         }
@@ -86,7 +86,7 @@ RSpec.describe Github::Installation::UpdateMarketplacePurchaseJob, type: :job do
       end
     end
 
-    context 'when no marketplace purchase exists' do
+    context "when no marketplace purchase exists" do
       let(:marketplace_plan) { {} }
 
       it do

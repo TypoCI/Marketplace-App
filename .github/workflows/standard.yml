@@ -1,10 +1,11 @@
-name: RuboCop
+name: Standard
 
 on:
   push:
+  pull_request:
 
 jobs:
-  rubocop:
+  standard:
     runs-on: ubuntu-latest
 
     steps:
@@ -13,5 +14,5 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
-    - name: Run RuboCop
-      run: bundle exec rubocop --parallel
+    - name: Run Standard
+      run: bundle exec standardrb

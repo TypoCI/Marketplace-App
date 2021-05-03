@@ -3,11 +3,11 @@ class Github::CheckSuites::AnalysisJob < ApplicationJob
     github_check_suite = arguments.first
 
     if github_check_suite.pull_request?
-      'github__check_suites__analysis--pull_request'
+      "github__check_suites__analysis--pull_request"
     elsif github_check_suite.committed_to_default_branch?
-      'github__check_suites__analysis--default_branch'
+      "github__check_suites__analysis--default_branch"
     else
-      'github__check_suites__analysis'
+      "github__check_suites__analysis"
     end
   end
 

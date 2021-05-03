@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Github::CheckSuites::SkipReasonUpdateRemoteJob, type: :job do
   let(:github_check_suite) do
@@ -12,12 +12,12 @@ RSpec.describe Github::CheckSuites::SkipReasonUpdateRemoteJob, type: :job do
     allow(instance_class).to receive(:install_service).and_return(github_install_service)
   end
 
-  describe '#perform' do
+  describe "#perform" do
     subject { instance_class.perform(github_check_suite) }
 
     it do
       expect(github_install_service).to receive(:create_check_run)
-        .with(github_check_suite.repository_full_name, 'TypoCheck (Test)', github_check_suite.head_sha, instance_of(Hash))
+        .with(github_check_suite.repository_full_name, "TypoCheck (Test)", github_check_suite.head_sha, instance_of(Hash))
         .and_return(create_check_run)
       subject
     end

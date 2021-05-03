@@ -8,7 +8,7 @@ class Github::Repositories::FileService
   end
 
   def analysable?
-    @analysable ||= File.file?(@file) && !configuration.excluded_file?(@repo_file_path) && file_is_maybe_text? && !@repo_file_path.include?('~')
+    @analysable ||= File.file?(@file) && !configuration.excluded_file?(@repo_file_path) && file_is_maybe_text? && !@repo_file_path.include?("~")
   end
 
   def invalid_words

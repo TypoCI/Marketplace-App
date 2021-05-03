@@ -1,6 +1,6 @@
 namespace :github do
   namespace :repositories do
-    desc 'Analyse popular projects & return their results'
+    desc "Analyse popular projects & return their results"
     task analyse_popular_projects: :environment do
       [
         # Ruby
@@ -27,7 +27,7 @@ namespace :github do
         # 'hanami/hanami',
         # 'alphagov/e-petitions',
         # 'alphagov/search-admin',
-        'mikerogers0/mikerogersio'
+        "mikerogers0/mikerogersio"
 
         # JavaScript
         # 'alyssaxuu/flowy',

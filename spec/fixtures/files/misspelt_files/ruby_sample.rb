@@ -1,6 +1,7 @@
 class RubySaemple
-  def some_method(_vaue, _someValue, _imageable, _rickleable)
-    @vaue = 'some value'
+  # someValue
+  def some_method(_vaue, _some_value, _imageable, _rickleable)
+    @vaue = "some value"
     @some_method = true
   end
 end

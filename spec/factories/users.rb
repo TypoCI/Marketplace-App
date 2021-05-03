@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :user do
     name { Faker::Name.name }
-    password { User.new.send(:password_digest, '12345678') }
-    encrypted_password { User.new.send(:password_digest, '12345678') }
+    password { User.new.send(:password_digest, "12345678") }
+    encrypted_password { User.new.send(:password_digest, "12345678") }
 
     sequence :email do |n|
       "test#{n}@example.com"

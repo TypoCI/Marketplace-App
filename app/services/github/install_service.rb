@@ -33,25 +33,19 @@ class Github::InstallService
   end
 
   def create_status(full_name, head_sha, status, options)
-    options.merge!(
-      accept: Octokit::Preview::PREVIEW_TYPES[:checks]
-    )
+    options[:accept] = Octokit::Preview::PREVIEW_TYPES[:checks]
 
     client.create_status(full_name, head_sha, status, options)
   end
 
   def create_check_run(repo, context, head_sha, options = {})
-    options.merge!(
-      accept: Octokit::Preview::PREVIEW_TYPES[:checks]
-    )
+    options[:accept] = Octokit::Preview::PREVIEW_TYPES[:checks]
 
     client.create_check_run(repo, context, head_sha, options)
   end
 
   def update_check_run(repo, id, options = {})
-    options.merge!(
-      accept: Octokit::Preview::PREVIEW_TYPES[:checks]
-    )
+    options[:accept] = Octokit::Preview::PREVIEW_TYPES[:checks]
 
     client.update_check_run(repo, id, options)
   end

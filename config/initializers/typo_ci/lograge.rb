@@ -7,7 +7,7 @@ Rails.application.configure do
     exceptions = %w[controller action format authenticity_token]
 
     # GitHub sends a lot of data, which we can just lookup on their site.
-    return {} if event.payload[:path] == '/webhooks/github'
+    return {} if event.payload[:path] == "/webhooks/github"
 
     {
       params: event.payload[:params].except(*exceptions)
@@ -18,7 +18,7 @@ Rails.application.configure do
     {
       host: controller.request.host,
       remote_ip: controller.request.remote_ip,
-      api_key: controller.request.headers.env['HTTP_X_APIKEY']
+      api_key: controller.request.headers.env["HTTP_X_APIKEY"]
     }
   end
 end

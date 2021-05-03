@@ -16,11 +16,11 @@ class ApplicationJob < ActiveJob::Base
   end
 
   def serialize
-    super.merge('initially_enqueued_at' => initially_enqueued_at)
+    super.merge("initially_enqueued_at" => initially_enqueued_at)
   end
 
   def deserialize(job_data)
     super
-    self.initially_enqueued_at = Time.parse(ENV['INITIALLY_ENQUEUED_AT'] || job_data['initially_enqueued_at'])
+    self.initially_enqueued_at = Time.parse(ENV["INITIALLY_ENQUEUED_AT"] || job_data["initially_enqueued_at"])
   end
 end

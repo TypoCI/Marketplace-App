@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :trackable, :lockable,
-         :rememberable, :validatable, :omniauthable
+    :rememberable, :validatable, :omniauthable
 
   has_many :identities, dependent: :destroy
 
@@ -20,11 +20,11 @@ class User < ApplicationRecord
   end
 
   def avatar_url
-    identities.first&.avatar_url || 'face.svg'
+    identities.first&.avatar_url || "face.svg"
   end
 
   def to_s
-    name || 'Awesome User'
+    name || "Awesome User"
   end
 
   def identity

@@ -14,11 +14,11 @@ class Spellcheck::WordPart
 
   def valid?
     @valid ||= word_part.length <= 2 ||
-               word_part == word_part.upcase ||
-               @configuration.excluded_word?(word_part) ||
-               word_part_in_any_of_the_dictionaries? ||
-               (suggestions&.first || '').split(/[- ]/).join.downcase == word_part.downcase ||
-               suggestions.first&.upcase == word_part.upcase
+      word_part == word_part.upcase ||
+      @configuration.excluded_word?(word_part) ||
+      word_part_in_any_of_the_dictionaries? ||
+      (suggestions&.first || "").split(/[- ]/).join.downcase == word_part.downcase ||
+      suggestions.first&.upcase == word_part.upcase
   end
 
   # Get the suggestions from the dictionaries, then merge then
@@ -26,9 +26,9 @@ class Spellcheck::WordPart
   def suggestions
     @suggestions ||= begin
       dictionary_suggestions = dictionaries
-                               .collect { |dictionary| suggestions_for_word_part_for_dictionary(dictionary) }
-                               .reject(&:empty?)
-                               .inject { |final_array, array| final_array.zip(array) }
+        .collect { |dictionary| suggestions_for_word_part_for_dictionary(dictionary) }
+        .reject(&:empty?)
+        .inject { |final_array, array| final_array.zip(array) }
       dictionary_suggestions = (dictionary_suggestions || []).flatten.compact.uniq[0, 4]
 
       dictionary_suggestions.collect!(&:capitalize) if capitalized?
@@ -56,9 +56,9 @@ class Spellcheck::WordPart
 
   def check_word_part_in_dictionary?(dictionary)
     return true if dictionary.check?(word_part.encode(dictionary.encoding))
-    return false if word_part == word_part.delete_suffix('able')
+    return false if word_part == word_part.delete_suffix("able")
 
-    dictionary.check?(word_part.delete_suffix('able').encode(dictionary.encoding))
+    dictionary.check?(word_part.delete_suffix("able").encode(dictionary.encoding))
   rescue Encoding::UndefinedConversionError
     false
   end

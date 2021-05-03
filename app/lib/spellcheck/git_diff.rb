@@ -5,7 +5,7 @@ class Spellcheck::GitDiff < Spellcheck::Content
     @configuration = configuration
 
     @patch = GitDiffParser::Patch.new(@diff)
-    @content = @patch.changed_lines.collect(&:content).join('')
+    @content = @patch.changed_lines.collect(&:content).join("")
   end
 
   def annotations
@@ -20,7 +20,7 @@ class Spellcheck::GitDiff < Spellcheck::Content
           end_line: patch_line.number,
           start_column: start_column,
           end_column: start_column + invalid_word.word.length,
-          annotation_level: 'warning',
+          annotation_level: "warning",
           title: invalid_word.word,
           message: message(invalid_word)
         }

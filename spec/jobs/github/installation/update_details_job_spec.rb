@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Github::Installation::UpdateDetailsJob, type: :job do
-  let(:github_install) { create(:github_install, account_type: 'WillChange', account_id: 123) }
+  let(:github_install) { create(:github_install, account_type: "WillChange", account_id: 123) }
   let(:instance_class) { described_class.new }
   let(:github_install_service) { double :github_install_service }
 
@@ -9,38 +9,38 @@ RSpec.describe Github::Installation::UpdateDetailsJob, type: :job do
     {
       id: github_install.install_id,
       account: {
-        login: 'MikeRogers0',
+        login: "MikeRogers0",
         id: 325_384,
-        node_id: 'MDQ6VXNlcjMyNTM4NA==',
-        avatar_url: 'https://avatars2.githubusercontent.com/u/320000?v=4',
-        gravatar_id: '',
-        url: 'https://api.github.com/users/MikeRogers0',
-        html_url: 'https://github.com/MikeRogers0',
-        followers_url: 'https://api.github.com/users/MikeRogers0/followers',
-        following_url: 'https://api.github.com/users/MikeRogers0/following{/other_user}',
-        gists_url: 'https://api.github.com/users/MikeRogers0/gists{/gist_id}',
-        starred_url: 'https://api.github.com/users/MikeRogers0/starred{/owner}{/repo}',
-        subscriptions_url: 'https://api.github.com/users/MikeRogers0/subscriptions',
-        organizations_url: 'https://api.github.com/users/MikeRogers0/orgs',
-        repos_url: 'https://api.github.com/users/MikeRogers0/repos',
-        events_url: 'https://api.github.com/users/MikeRogers0/events{/privacy}',
-        received_events_url: 'https://api.github.com/users/MikeRogers0/received_events',
-        type: 'User',
+        node_id: "MDQ6VXNlcjMyNTM4NA==",
+        avatar_url: "https://avatars2.githubusercontent.com/u/320000?v=4",
+        gravatar_id: "",
+        url: "https://api.github.com/users/MikeRogers0",
+        html_url: "https://github.com/MikeRogers0",
+        followers_url: "https://api.github.com/users/MikeRogers0/followers",
+        following_url: "https://api.github.com/users/MikeRogers0/following{/other_user}",
+        gists_url: "https://api.github.com/users/MikeRogers0/gists{/gist_id}",
+        starred_url: "https://api.github.com/users/MikeRogers0/starred{/owner}{/repo}",
+        subscriptions_url: "https://api.github.com/users/MikeRogers0/subscriptions",
+        organizations_url: "https://api.github.com/users/MikeRogers0/orgs",
+        repos_url: "https://api.github.com/users/MikeRogers0/repos",
+        events_url: "https://api.github.com/users/MikeRogers0/events{/privacy}",
+        received_events_url: "https://api.github.com/users/MikeRogers0/received_events",
+        type: "User",
         site_admin: false
       },
-      repository_selection: 'selected',
-      access_tokens_url: 'https://api.github.com/app/installations/6333414/access_tokens',
-      repositories_url: 'https://api.github.com/installation/repositories',
-      html_url: 'https://github.com/settings/installations/6333414',
+      repository_selection: "selected",
+      access_tokens_url: "https://api.github.com/app/installations/6333414/access_tokens",
+      repositories_url: "https://api.github.com/installation/repositories",
+      html_url: "https://github.com/settings/installations/6333414",
       app_id: 41_496,
-      app_slug: 'typoci-localdev',
+      app_slug: "typoci-localdev",
       target_id: 325_384,
-      target_type: 'User',
+      target_type: "User",
       permissions: {
-        checks: 'write',
-        contents: 'read',
-        metadata: 'read',
-        pull_requests: 'read'
+        checks: "write",
+        contents: "read",
+        metadata: "read",
+        pull_requests: "read"
       },
       events: %w[check_suite pull_request],
       created_at: Time.zone.now,
@@ -49,7 +49,7 @@ RSpec.describe Github::Installation::UpdateDetailsJob, type: :job do
     }
   end
 
-  describe '#perform' do
+  describe "#perform" do
     subject { instance_class.perform(github_install) }
 
     before do

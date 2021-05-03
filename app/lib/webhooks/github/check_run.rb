@@ -4,7 +4,7 @@ class Webhooks::Github::CheckRun
   end
 
   def requested_action!
-    github_check_suite&.reported! if requested_action[:identifier] == 'reported'
+    github_check_suite&.reported! if requested_action[:identifier] == "reported"
   end
 
   private
@@ -26,6 +26,6 @@ class Webhooks::Github::CheckRun
   end
 
   def install
-    @install ||= Github::Install.find_by!(install_id: installation['id'])
+    @install ||= Github::Install.find_by!(install_id: installation["id"])
   end
 end

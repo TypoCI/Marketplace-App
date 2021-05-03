@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Github::Installation::AnalyseAllPullRequestsJob, type: :job do
   let(:github_install) { create(:github_install) }
@@ -7,9 +7,9 @@ RSpec.describe Github::Installation::AnalyseAllPullRequestsJob, type: :job do
   let(:repository) do
     {
       id: 11_435_930,
-      node_id: 'MDEwOlJlcG9zaXRvcnkxMTQzNTkzMA==',
-      name: 'MikeRogersIO',
-      full_name: 'MikeRogers0/MikeRogersIO',
+      node_id: "MDEwOlJlcG9zaXRvcnkxMTQzNTkzMA==",
+      name: "MikeRogersIO",
+      full_name: "MikeRogers0/MikeRogersIO",
       private: false,
       fork: false,
       stargazers_count: 7,
@@ -19,11 +19,11 @@ RSpec.describe Github::Installation::AnalyseAllPullRequestsJob, type: :job do
       forks: 1,
       open_issues: 3,
       watchers: 7,
-      default_branch: 'master'
+      default_branch: "master"
     }
   end
 
-  describe '#perform' do
+  describe "#perform" do
     subject { instance_class.perform(github_install) }
 
     it do

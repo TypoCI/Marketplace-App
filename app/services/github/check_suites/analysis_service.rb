@@ -13,9 +13,9 @@ class Github::CheckSuites::AnalysisService
   end
 
   def conclusion
-    return 'action_required' if @github_check_suite.custom_configuration_present_and_invalid?
+    return "action_required" if @github_check_suite.custom_configuration_present_and_invalid?
 
-    spelling_mistakes_count.zero? ? 'success' : 'neutral'
+    spelling_mistakes_count.zero? ? "success" : "neutral"
   end
 
   def files_analysed_count
@@ -54,12 +54,12 @@ class Github::CheckSuites::AnalysisService
   def github_diff
     if @github_check_suite.pull_request?
       github_install_service.get_pull_request_files(@github_check_suite.pull_request.base_repo_full_name,
-                                                    @github_check_suite.pull_request.number)
+        @github_check_suite.pull_request.number)
     elsif @github_check_suite.first_commit?
       github_install_service.commit(@github_check_suite.repository_full_name, @github_check_suite.head_sha)[:files]
     else
       github_install_service.compare(@github_check_suite.repository_full_name, @github_check_suite.base_sha,
-                                     @github_check_suite.head_sha)[:files]
+        @github_check_suite.head_sha)[:files]
     end
   end
 

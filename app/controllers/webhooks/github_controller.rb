@@ -5,8 +5,8 @@ class Webhooks::GithubController < ActionController::API
   skip_before_action :check_github_event!
 
   def github_installation(payload)
-    Webhooks::Github::Installation.new(payload).created! if payload[:action] == 'created'
-    Webhooks::Github::Installation.new(payload).deleted! if payload[:action] == 'deleted'
+    Webhooks::Github::Installation.new(payload).created! if payload[:action] == "created"
+    Webhooks::Github::Installation.new(payload).deleted! if payload[:action] == "deleted"
     # TODO: new_permissions_accepted
   end
 
@@ -15,8 +15,8 @@ class Webhooks::GithubController < ActionController::API
   end
 
   def github_installation_repositories(payload)
-    Webhooks::Github::InstallationRepositories.new(payload).added! if payload[:action] == 'added'
-    Webhooks::Github::InstallationRepositories.new(payload).removed! if payload[:action] == 'removed'
+    Webhooks::Github::InstallationRepositories.new(payload).added! if payload[:action] == "added"
+    Webhooks::Github::InstallationRepositories.new(payload).removed! if payload[:action] == "removed"
   end
 
   def github_integration_installation_repositories(payload)
@@ -24,14 +24,14 @@ class Webhooks::GithubController < ActionController::API
   end
 
   def github_marketplace_purchase(payload)
-    Webhooks::Github::MarketplacePurchase.new(payload).purchased! if payload[:action] == 'purchased'
-    Webhooks::Github::MarketplacePurchase.new(payload).pending_change! if payload[:action] == 'pending_change'
-    Webhooks::Github::MarketplacePurchase.new(payload).changed! if payload[:action] == 'changed'
+    Webhooks::Github::MarketplacePurchase.new(payload).purchased! if payload[:action] == "purchased"
+    Webhooks::Github::MarketplacePurchase.new(payload).pending_change! if payload[:action] == "pending_change"
+    Webhooks::Github::MarketplacePurchase.new(payload).changed! if payload[:action] == "changed"
   end
 
   def github_check_suite(payload)
-    Webhooks::Github::CheckSuite.new(payload).requested! if payload[:action] == 'requested'
-    Webhooks::Github::CheckSuite.new(payload).rerequested! if payload[:action] == 'rerequested'
+    Webhooks::Github::CheckSuite.new(payload).requested! if payload[:action] == "requested"
+    Webhooks::Github::CheckSuite.new(payload).rerequested! if payload[:action] == "rerequested"
   end
 
   def github_status(payload)
@@ -43,7 +43,7 @@ class Webhooks::GithubController < ActionController::API
   end
 
   def github_check_run(payload)
-    Webhooks::Github::CheckRun.new(payload).requested_action! if payload[:action] == 'requested_action'
+    Webhooks::Github::CheckRun.new(payload).requested_action! if payload[:action] == "requested_action"
   end
 
   def github_repository_event(payload)
@@ -65,13 +65,13 @@ class Webhooks::GithubController < ActionController::API
   end
 
   def github_pull_request(payload)
-    Webhooks::Github::PullRequest.new(payload).opened! if payload[:action] == 'opened'
-    Webhooks::Github::PullRequest.new(payload).synchronize! if payload[:action] == 'synchronize'
+    Webhooks::Github::PullRequest.new(payload).opened! if payload[:action] == "opened"
+    Webhooks::Github::PullRequest.new(payload).synchronize! if payload[:action] == "synchronize"
   end
 
   private
 
   def webhook_secret(_payload)
-    ENV['GITHUB_WEBHOOK_SECRET']
+    ENV["GITHUB_WEBHOOK_SECRET"]
   end
 end

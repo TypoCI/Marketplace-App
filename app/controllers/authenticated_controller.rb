@@ -5,7 +5,7 @@ class AuthenticatedController < ApplicationController
   private
 
   def set_raven_context
-    Raven.user_context(id: session['warden.user.user.key']&.first&.first)
+    Raven.user_context(id: session["warden.user.user.key"]&.first&.first)
     Raven.extra_context(params: params.to_unsafe_h, url: request.url, subdomain: request.subdomain)
   end
 

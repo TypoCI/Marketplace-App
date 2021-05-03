@@ -17,7 +17,7 @@ class Github::PullRequests::FileService
   end
 
   def file_name_extension
-    File.extname(filename).strip.downcase[1..-1]
+    File.extname(filename).strip.downcase[1..]
   end
 
   def analysable_contents?
@@ -34,10 +34,10 @@ class Github::PullRequests::FileService
 
   def file_name_annotations
     @file_name_annotations ||= if configuration.spellcheck_filenames?
-                                 spellcheck_file_name.annotations
-                               else
-                                 []
-                               end
+      spellcheck_file_name.annotations
+    else
+      []
+    end
   end
 
   def contents_annotations

@@ -20,7 +20,7 @@ class Github::CheckSuites::RequestedJob < ApplicationJob
 
     # Does their plan support this commit?
     unless @github_check_suite.plan_permits_analysis?
-      @github_check_suite.conclusion_skipped!(conclusion_skipped_reason: 'private_repositories_not_supported')
+      @github_check_suite.conclusion_skipped!(conclusion_skipped_reason: "private_repositories_not_supported")
       Github::CheckSuites::SkipReasonUpdateRemoteJob.perform_later(@github_check_suite)
       return
     end
@@ -28,14 +28,14 @@ class Github::CheckSuites::RequestedJob < ApplicationJob
     # Check if the PR was made by a bot
     load_pull_request_information!
     unless @github_check_suite.pull_request_analysable?
-      @github_check_suite.conclusion_skipped!(conclusion_skipped_reason: 'unanalysable_pull_request')
+      @github_check_suite.conclusion_skipped!(conclusion_skipped_reason: "unanalysable_pull_request")
       return
     end
 
     load_configuration!
     update_github_check_suite!
 
-    Heroku::RunCommandJob.perform_later('Github::CheckSuites::AnalysisJob', @github_check_suite)
+    Heroku::RunCommandJob.perform_later("Github::CheckSuites::AnalysisJob", @github_check_suite)
   end
 
   private

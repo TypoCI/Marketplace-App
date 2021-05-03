@@ -9,8 +9,8 @@ class Webhooks::Github::MarketplacePurchase
     Github::Installation::UpdateMarketplacePurchaseJob.perform_later(github_install)
   end
 
-  alias pending_change! purchased!
-  alias changed! purchased!
+  alias_method :pending_change!, :purchased!
+  alias_method :changed!, :purchased!
 
   private
 
@@ -27,6 +27,6 @@ class Webhooks::Github::MarketplacePurchase
   end
 
   def github_install
-    @github_install ||= Github::Install.find_by(account_id: account['id'])
+    @github_install ||= Github::Install.find_by(account_id: account["id"])
   end
 end

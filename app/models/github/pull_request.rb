@@ -26,7 +26,7 @@ class Github::PullRequest
   end
 
   def base_repo_full_name
-    base[:repo][:url].sub('https://api.github.com/repos/', '')
+    base[:repo][:url].sub("https://api.github.com/repos/", "")
   end
 
   private
