@@ -50,6 +50,8 @@ class Github::Installation::UpdateMarketplacePurchaseJob < ApplicationJob
   end
 
   def mrr_in_cents
+    return 0 unless marketplace_plan[:marketplace_purchase][:is_installed]
+
     if marketplace_plan[:marketplace_purchase][:billing_cycle] == "monthly"
       marketplace_plan[:marketplace_purchase][:plan][:monthly_price_in_cents]
     else
